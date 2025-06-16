@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/20 to-indigo-500/10 animate-pulse"></div>
       </div>
       <footer className="relative z-10 bg-black pt-16 dark:bg-black md:pt-20 lg:pt-24 overflow-hidden">
-        <div className="max-w-7xl relative z-10 mx-auto px-4">
+        <div className="max-w-full relative z-10 mx-auto px-4">
           <div className="flex flex-wrap justify-center">
             <div className="w-1/5 px-4">
               <div className="mb-12 w-auto lg:mb-16 group">
