@@ -1,10 +1,24 @@
-import './App.css'
+import './App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import PublicLayout from './components/PublicLayout';
+import Landing from './pages/Landing';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
 
   return (
     <>
-    <div className='bg-red-500 font-bold text-2xl text-center'>Voicera</div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<PublicLayout />}>
+            <Route index element={<Landing />} />
+            <Route path='login' element={<Login />} />
+            <Route path='register' element={<Register />} />
+          </Route>
+          <Route path='*' element={<Navigate to='/' />} />
+        </Routes>
+      </Router>
     </>
   )
 }
