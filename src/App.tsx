@@ -1,10 +1,11 @@
 import './App.css'
+import Choose from './Components/Choose'
 
 function App() {
 
   return (
     <>
-    <div className='bg-red-500 font-bold text-2xl text-center'>Voicera</div>
+      <Choose/>
     </>
   )
 }
