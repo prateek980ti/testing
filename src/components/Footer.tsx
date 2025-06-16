@@ -7,10 +7,10 @@ const Footer = () => {
       <div className="h-px w-full bg-gradient-to-r from-transparent via-[#4B4B4B] to-transparent relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/20 to-indigo-500/10 animate-pulse"></div>
       </div>
-      <footer className="relative z-10 bg-black pt-16 dark:bg-black md:pt-20 lg:pt-24 overflow-hidden">
-        <div className="max-w-full relative z-10 mx-auto px-4">
+      <footer className=" relative z-10 bg-black pt-16 dark:bg-black md:pt-20 lg:pt-24 overflow-hidden">
+        <div className="relative z-10 mx-auto px-4">
           <div className="flex flex-wrap justify-center">
-            <div className="w-1/5 px-4">
+            <div className="w-1/5 px-4 mr-10">
               <div className="mb-12 w-auto lg:mb-16 group">
                 {/* Enhanced Logo Section */}
                 <Link href="/" className="mb-8 inline-block group/logo">
@@ -105,11 +105,11 @@ const Footer = () => {
             {/* Enhanced Link Sections */}
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16 group">
-                <h2 className="mb-10 text-xl font-bold text-white group-hover:text-blue-600 transition-colors duration-300 relative">
+                <h2 className="mb-10 text-xl font-bold text-start text-white group-hover:text-blue-600 transition-colors duration-300 relative">
                   Company
                   <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
                 </h2>
-                <ul className="space-y-2">
+                <ul className="space-y-2 flex flex-col items-start">
                   <li>
                     <Link
                       href="/case-study"
@@ -149,11 +149,11 @@ const Footer = () => {
 
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16 group">
-                <h2 className="mb-10 text-xl font-bold text-white group-hover:text-purple-600 transition-colors duration-300 relative">
+                <h2 className="mb-10 text-xl font-bold text-start text-white group-hover:text-purple-600 transition-colors duration-300 relative">
                   Resources
                   <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-indigo-500 group-hover:w-full transition-all duration-500"></div>
                 </h2>
-                <ul className="space-y-2">
+                <ul className="space-y-2 flex flex-col items-start">
                   <li>
                     <Link
                       href="/"
@@ -191,13 +191,13 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="w-1/5 px-4">
+            <div className="w-1/5 px-4 ">
               <div className="mb-12 lg:mb-16 group">
-                <h2 className="mb-10 text-xl font-bold text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
+                <h2 className="mb-10 text-xl font-bold text-start text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
                   Useful links
                   <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-blue-500 group-hover:w-full transition-all duration-500"></div>
                 </h2>
-                <ul className="space-y-2">
+                <ul className="space-y-2 flex flex-col items-start">
                   <li>
                     <Link
                       href="/contact"
@@ -237,11 +237,11 @@ const Footer = () => {
 
             <div className="w-1/5 px-4">
               <div className="mb-12 lg:mb-16 group">
-                <h2 className="mb-10 text-xl font-bold text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
+                <h2 className="mb-10 text-xl font-bold text-start text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
                   Terms of Use
                   <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-blue-500 group-hover:w-full transition-all duration-500"></div>
                 </h2>
-                <ul className="space-y-2">
+                <ul className="space-y-2 flex flex-col items-start">
                   <li>
                     <Link
                       href="/contact"

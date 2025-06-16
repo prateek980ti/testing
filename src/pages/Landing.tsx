@@ -5,7 +5,7 @@ const Landing = () => {
   return (
     <div className='max-w-screen bg-black min-h-screen text-white flex flex-col items-center text-center'>
       <Section4 />
-      <div className='w-full'>
+      <div className='w-[80vw]'>
         <Footer />
       </div>
     </div>
