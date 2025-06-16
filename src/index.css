@@ -1,1 +1,23 @@
 @import "tailwindcss";
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: system-ui, sans-serif;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+input, textarea, button {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #666666;
+}
