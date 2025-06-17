@@ -5,7 +5,7 @@
   box-sizing: border-box;
 } */
 
-body {
+/* body {
   background-color: #000000;
   color: #ffffff;
   font-family: system-ui, sans-serif;
@@ -20,4 +20,55 @@ input, textarea, button {
   background-color: #333333;
   color: #ffffff;
   border: 1px solid #666666;
-}
+} */
+
+
+@import "tailwindcss";
+
+@theme{
+    --color-primaryA: #000000;
+    --color-primaryB: #ffffff;
+    --color-primaryC: #FF00FF;
+    --color-accent: #8F00FF;
+    --color-linkColor: #D3D3FF;
+    --color-negative:#FD1414;
+    --color-warning:#FFC700;
+    --color-positive:#25BE08;
+    --color-backgroundPrimary:#FFFFFF;
+    --color-backgroundSecondary:#F3F3F3;
+    --color-backgroundTertiary:#E8E8E8;
+    --color-backgroundInversePrimary:#000000;
+    --color-BG-tertiary:#282828;
+    --color-navyblue:#102E50;
+
+    --color-contentPrimary:#000000;
+    --color-contentSecondary:#4B4B4B;
+    --color-contentTertiary:#868788;
+    --color-borderAccent:#276EF1;
+    
+
+   --color-contentInversePrimary:#FFFFFF;
+   --color--contentSecondary:#DDDDDD;
+   --color-contentTertiary:#A6A6A6;
+
+   --color-borderOpaque:#E8E8E8;
+   --color-borderTransparent:#E8E8E814;
+   --color-borderSelected:#000000;
+
+   --color-borderInverseOpaque:#4B4B4B;
+   --color-borderInverseTransparent:#E8E8E833;
+   --color-borderInverseSelected:#ffffff;
+   --color-first:#EC407A;
+   --color-second:#CA2C92;
+   --color-pink:#B70849;
+   --color-purple:#662DFF;
+
+
+   --color-sky:#0369a1;
+
+
+   --text-small:15px;
+   --text-large:62px;
+   --text-md:28px;
+ 
+   }
