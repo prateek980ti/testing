@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-:root {
+@theme {
   --color-primaryA: #000000;
   --color-primaryB: #ffffff;
   --color-primaryC: #FF00FF;
@@ -19,7 +19,7 @@
 
   --color-contentPrimary: #000000;
   --color-contentSecondary: #4B4B4B;
-  --color-contentTertiary: #868788; /* Keep one only */
+  --color-contentTertiary: #868788;
   --color-borderAccent: #276EF1;
 
   --color-contentInversePrimary: #FFFFFF;
@@ -43,3 +43,4 @@
   --text-large: 62px;
   --text-md: 28px;
 }
+
