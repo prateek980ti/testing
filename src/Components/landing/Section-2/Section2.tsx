@@ -1,9 +1,9 @@
 import React from 'react';
-import ChooseContainer from './ChooseContainer';
+import SectionContainer from './SectionContainer';
 import { leftFeatures, rightFeatures } from './Data';
-import earthVideo from '/src/assets/logo/earth gif.mp4';
+import earthVideo from "../../../assets/logoimage/earth gif.mp4";
 
-const Choose: React.FC = () => {
+const Section2: React.FC = () => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen px-4 py-16 text-white bg-primaryA">
       <h2 className="mb-2 text-4xl font-bold text-transparent bg-gradient-to-r from-pink to-purple bg-clip-text">
@@ -17,7 +17,7 @@ const Choose: React.FC = () => {
 
         <div className="flex flex-col items-end gap-10">
           {leftFeatures.map((feature, index) => (
-            <ChooseContainer
+            <SectionContainer
               key={index}
               icon={feature.icon}
               title={feature.title}
@@ -41,7 +41,7 @@ const Choose: React.FC = () => {
 
         <div className="flex flex-col items-start gap-10">
           {rightFeatures.map((feature, index) => (
-            <ChooseContainer
+            <SectionContainer
               key={index}
               icon={feature.icon}
               title={feature.title}
@@ -54,4 +54,4 @@ const Choose: React.FC = () => {
   );
 };
 
-export default Choose;
+export default Section2;

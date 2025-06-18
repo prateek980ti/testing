@@ -1,5 +1,5 @@
 import './App.css'
-import Choose from './components/ChooseUs/Choose'
+
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import PublicLayout from './components/PublicLayout';
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <Choose/>
+
       <Router>
         <Routes>
           <Route path='/' element={<PublicLayout />}>

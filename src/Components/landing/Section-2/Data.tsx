@@ -1,7 +1,12 @@
-import LightIcon from '/src/assets/logo/light.svg';
-import EnterpriseIcon from '/src/assets/logo/Enterprise.svg';
-import AIIcon from '/src/assets/logo/AI.svg';
-import DeveloperIcon from '/src/assets/logo/Developer.svg';
+import LightIcon from "../../../assets/logoimage/light.svg";
+import EnterpriseIcon from "../../../assets/logoimage/Enterprise.svg";
+import AIIcon from "../../../assets/logoimage/AI.svg";
+import DeveloperIcon from "../../../assets/logoimage/Developer.svg";
+
+
+
+
+
 
 export const leftFeatures = [
   {
