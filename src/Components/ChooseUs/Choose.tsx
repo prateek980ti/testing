@@ -14,7 +14,7 @@ const Choose: React.FC = () => {
       </p>
 
       <div className="grid items-center grid-cols-3 gap-10">
-        {/* Left Features */}
+
         <div className="flex flex-col items-end gap-10">
           {leftFeatures.map((feature, index) => (
             <ChooseContainer
@@ -25,15 +25,13 @@ const Choose: React.FC = () => {
             />
           ))}
         </div>
-
-        {/* Earth Video */}
         <div className="flex justify-center">
           <video
             width="762"
             height="749"
             autoPlay
             muted
-            loop
+
             className="rounded-full"
           >
             <source src={earthVideo} type="video/mp4" />
@@ -41,7 +39,6 @@ const Choose: React.FC = () => {
           </video>
         </div>
 
-        {/* Right Features */}
         <div className="flex flex-col items-start gap-10">
           {rightFeatures.map((feature, index) => (
             <ChooseContainer
