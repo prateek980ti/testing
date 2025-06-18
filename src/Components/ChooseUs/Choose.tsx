@@ -1,48 +1,57 @@
 import React from 'react';
 import ChooseContainer from './ChooseContainer';
-import { topFeatures, bottomFeatures } from './Data';
+import { leftFeatures, rightFeatures } from './Data';
 import earthVideo from '/src/assets/logo/earth gif.mp4';
 
 const Choose: React.FC = () => {
   return (
-    <section className="min-h-screen px-4 py-16 text-center text-primaryB bg-primaryA">
-      <h2 className="inline-block font-bold text-transparent text-large bg-gradient-to-r from-pink to-purple bg-clip-text w-fit">
+    <section className="flex flex-col items-center justify-center min-h-screen px-4 py-16 text-white bg-primaryA">
+      <h2 className="mb-2 text-4xl font-bold text-transparent bg-gradient-to-r from-pink to-purple bg-clip-text">
         WHY CHOOSE US?
       </h2>
-
-      <p className="font-bold text-md text-white/80">
+      <p className="mb-10 text-lg font-medium text-center text-white/80">
         Discover What Sets Vociera Apart In World Of Voice Technology
       </p>
 
-      <div className="grid max-w-6xl grid-cols-1 gap-6 mx-auto sm:grid-cols-2">
-        {topFeatures.map((feature, index) => (
-          <ChooseContainer
-            key={index}
-            icon={feature.icon}
-            title={feature.title}
-            description={feature.description}
-          />
-        ))}
-        <div className="flex items-center justify-center col-span-1 sm:col-span-2">
+      <div className="grid items-center grid-cols-3 gap-10">
+        {/* Left Features */}
+        <div className="flex flex-col items-end gap-10">
+          {leftFeatures.map((feature, index) => (
+            <ChooseContainer
+              key={index}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+            />
+          ))}
+        </div>
+
+        {/* Earth Video */}
+        <div className="flex justify-center">
           <video
-            width="562"
-            height="349"
+            width="762"
+            height="749"
             autoPlay
             muted
             loop
-            className="rounded-full shadow-2xl"
+            className="rounded-full"
           >
             <source src={earthVideo} type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
         </div>
-        {bottomFeatures.map((feature, index) => (
-          <ChooseContainer
-            key={index + 2}
-            icon={feature.icon}
-            title={feature.title}
-            description={feature.description}
-          />
-        ))}
+
+        {/* Right Features */}
+        <div className="flex flex-col items-start gap-10">
+          {rightFeatures.map((feature, index) => (
+            <ChooseContainer
+              key={index}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

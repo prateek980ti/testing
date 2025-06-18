@@ -3,24 +3,24 @@ import EnterpriseIcon from '/src/assets/logo/Enterprise.svg';
 import AIIcon from '/src/assets/logo/AI.svg';
 import DeveloperIcon from '/src/assets/logo/Developer.svg';
 
-export const topFeatures = [
+export const leftFeatures = [
   {
     icon: <img src={LightIcon} alt="LightLogo" />,
     title: 'Lightning-Fast APIs',
     description: 'Integrate voice in minutes with our ultra-responsive endpoints.',
   },
   {
-    icon: <img src={EnterpriseIcon} alt="EnterPrise" />,
-    title: 'Enterprise-Grade Security',
-    description: 'End-to-end encryption & GDPR-ready infrastructure.',
-  },
-];
-
-export const bottomFeatures = [
-  {
     icon: <img src={AIIcon} alt="AIIcon" />,
     title: 'AI-Powered Voice Intelligence',
     description: 'Smart, context-aware voice recognition built for modern apps.',
+  },
+];
+
+export const rightFeatures = [
+  {
+    icon: <img src={EnterpriseIcon} alt="EnterPrise" />,
+    title: 'Enterprise-Grade Security',
+    description: 'End-to-end encryption & GDPR-ready infrastructure.',
   },
   {
     icon: <img src={DeveloperIcon} alt="DeveloperIconSS" />,
