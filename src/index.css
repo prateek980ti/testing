@@ -36,6 +36,7 @@
    --color-second:#CA2C92;
    --color-pink:#B70849;
    --color-purple:#662DFF;
+   --font-display: 'Outfit', sans-serif;
 
 
    --color-sky:#0369a1;
@@ -44,7 +45,7 @@
    --text-small:15px;
    --text-large:62px;
    --text-md:28px;
- 
+
    }
 /* * {
   margin: 0;
