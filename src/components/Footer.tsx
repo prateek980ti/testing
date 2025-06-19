@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      {/* Enhanced Divider */}
+      {/* Divider */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-[#4B4B4B] to-transparent relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/20 to-indigo-500/10 animate-pulse"></div>
       </div>
@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center">
             <div className="w-1/5 px-4 mr-10">
               <div className="mb-12 w-auto lg:mb-16 group">
-                {/* Enhanced Logo Section */}
+                {/* Logo Section */}
                 <Link href="/" className="mb-8 inline-block group/logo">
                   <div className="flex items-center gap-4">
                     <div className="relative overflow-hidden rounded-xl group-hover/logo:scale-110 transition-transform duration-300">
@@ -29,7 +29,7 @@ const Footer = () => {
                   </div>
                 </Link>
 
-                {/* Enhanced Social Links */}
+                {/* Social Links */}
                 <div className="flex items-center space-x-4">
                   <a
                     href="https://www.instagram.com/frisson_devhub/"
@@ -102,7 +102,7 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Enhanced Link Sections */}
+            {/* Link Sections */}
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16 group">
                 <h2 className="mb-10 text-xl font-bold text-start text-white group-hover:text-blue-600 transition-colors duration-300 relative">
@@ -280,12 +280,12 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Enhanced Divider */}
+          {/* Divider */}
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#4B4B4B] to-transparent relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/20 to-indigo-500/10 animate-pulse"></div>
           </div>
 
-          {/* Enhanced Copyright */}
+          {/* Copyright */}
           <div className="py-8 group">
             <p className="text-center text-base text-[#4B4B4B] group-hover:text-gray-300 transition-colors duration-300">
               Copyright © 2025 VoiceraInc. All right reserved. About Us Support Blog Terms Privacy Cookie Policy
