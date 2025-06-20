@@ -76,7 +76,7 @@ const Carousel = ({
                 opacity,
               }}
             >
-              <div className="bg-gradient-to-tl from-accent to-primaryC p-[2px] cursor-pointer duration-300 hover:scale-110 rounded-[2rem]">
+              <div className="bg-gradient-to-tl from-accent to-primaryC p-[2px] cursor-pointer duration-300 hover:scale-105 rounded-[2rem]">
                 <div className="bg-black rounded-[2rem] px-8 py-6 w-[600px] max-w-[90vw] h-[300px] flex flex-col gap-5">
                   {offset === 0 ? (
                     <>
