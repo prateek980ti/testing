@@ -72,7 +72,7 @@ export const InputField = ({
     setCross(value.length === 0);
   };
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const counterHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
     onChange && onChange();
   };
@@ -120,7 +120,7 @@ export const InputField = ({
         )}
       >
         <input
-          onChange={onChangeHandler}
+          onChange={counterHandler}
           type="text"
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
