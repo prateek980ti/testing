@@ -127,7 +127,7 @@ const Carousel = ({
       {/* Arrows + Dots */}
       <div className="flex items-center justify-center mt-10 gap-6 z-20">
         {/* Left Arrow */}
-        <button onClick={prevSlide}>
+        <button className="hover:cursor-pointer" onClick={prevSlide}>
           <svg
             className="w-6 h-6 rotate-180"
             viewBox="0 0 24 24"
@@ -159,7 +159,7 @@ const Carousel = ({
         </div>
 
         {/* Right Arrow */}
-        <button onClick={nextSlide}>
+        <button className="hover:cursor-pointer" onClick={nextSlide}>
           <svg
             className="w-6 h-6"
             viewBox="0 0 24 24"
