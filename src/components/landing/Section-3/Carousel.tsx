@@ -53,7 +53,7 @@ const Carousel = ({
   }, [autoPlay, autoPlayInterval, currentIndex]);
 
   return (
-    <div className="relative w-full h-[66vh] bg-black overflow-hidden flex flex-col items-center justify-center px-4">
+    <div className="relative w-full h-[75vh] bg-black overflow-hidden flex flex-col items-center justify-center px-4">
       {/* Cards */}
       <div className="relative w-full max-w-6xl h-[340px] flex items-center justify-center z-10">
         {testimonials.map((t, i) => {

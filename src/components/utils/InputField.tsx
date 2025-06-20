@@ -1,181 +1,190 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
+// 🚀 Numeric Enums with Named Keys
+export enum IconStatus {
+  COMPLETE,
+  INCOMPLETE,
+  LOADING,
+  CLOSE,
+}
+
+export enum InputSize {
+  SM,
+  MD,
+  LG,
+}
+
+export enum InputStatus {
+  DEFAULT,
+  SUCCESS,
+  ERROR,
+}
+
 interface InputFieldProps {
-	label?: string;
-	hint?: string;
-	iconStatus?: 'complete' | 'incomplete' | 'loading' | 'close';
-	size?: 'sm' | 'md' | 'lg';
-	status?: 'default' | 'success' | 'error';
-	counter?: { max: number };
-	onChange?: () => void;
-	disabled?: boolean;
-	className?: string;
-	placeholder?: string;
+  label?: string;
+  hint?: string;
+  iconStatus?: IconStatus;
+  size?: InputSize;
+  status?: InputStatus;
+  counter?: { max: number };
+  onChange?: () => void;
+  disabled?: boolean;
+  className?: string;
+  placeholder?: string;
 }
 
 export const InputField = ({
-	label,
-	hint,
-	iconStatus,
-	size = 'sm',
-	status = 'default',
-	counter,
-	disabled = false,
-	className,
-	onChange,
-	placeholder = 'placeholder',
+  label,
+  hint,
+  iconStatus,
+  size = InputSize.SM,
+  status = InputStatus.DEFAULT,
+  counter,
+  disabled = false,
+  className,
+  onChange,
+  placeholder = 'placeholder',
 }: InputFieldProps) => {
-	const borderColors = {
-		default: 'border-borderOpaque',
-		success: 'border-positive border-2',
-		error: 'border-negative border-2',
-	};
+  const borderColors = {
+    [InputStatus.DEFAULT]: 'border-borderOpaque',
+    [InputStatus.SUCCESS]: 'border-positive border-2',
+    [InputStatus.ERROR]: 'border-negative border-2',
+  };
 
-	const hintColors = {
-		default: 'text-contentInverseTertiary',
-		success: 'text-positive',
-		error: 'text-negative',
-	};
+  const hintColors = {
+    [InputStatus.DEFAULT]: 'text-contentInverseTertiary',
+    [InputStatus.SUCCESS]: 'text-positive',
+    [InputStatus.ERROR]: 'text-negative',
+  };
 
-	const sizeStyles = {
-		sm: '  text-[14px] ',
-		md: ' text-[16px] ',
-		lg: '  text-[18px] ',
-	};
+  const sizeStyles = {
+    [InputSize.SM]: 'text-[14px]',
+    [InputSize.MD]: 'text-[16px]',
+    [InputSize.LG]: 'text-[18px]',
+  };
 
-	const [cross, setCross] = useState(false);
-	const [value, setValue] = useState('');
-	const [focused, setFocused] = useState(false);
+  const [cross, setCross] = useState(false);
+  const [value, setValue] = useState('');
+  const [focused, setFocused] = useState(false);
 
-	const counterCheck = () => {
-		if (value.length != 0) {
-			setCross(false);
-		} else {
-			setCross(true);
-		}
-	};
+  const counterCheck = () => {
+    setCross(value.length === 0);
+  };
 
-	const onChangeHandler = (e) => {
-		setValue(e.target.value);
-		onChange && onChange();
-	};
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+    onChange && onChange();
+  };
 
-	useEffect(() => {
-		counterCheck();
-		if (counter && value.length > counter.max) {
-			setValue(value.slice(0, counter?.max));
-			console.log('Limit Exceed');
-			alert('Limit exceed');
-		}
-	}, [value]);
+  useEffect(() => {
+    counterCheck();
+    if (counter && value.length > counter.max) {
+      setValue(value.slice(0, counter.max));
+      alert('Limit exceed');
+    }
+  }, [value]);
 
-	return (
-		<div className={`flex flex-col gap-1 w-[375px]`}>
-			{label && (
-				<div
-					className={`flex justify-between items-center ${size} text-white/90`}
-				>
-					<label className={sizeStyles[size]}>{label}</label>
-					{counter && (
-						<span className={`${size} text-white/50`}>
-							{value.length}/{counter.max}
-						</span>
-					)}
-				</div>
-			)}
-			<div
-				className={twMerge(
-					'flex items-center border  rounded-lg px-3  text-white ',
-					borderColors[status],
-					sizeStyles[size],
-					status == 'default' && !disabled
-						? focused
-							? 'border-borderInverseSelected border-[2px]'
-							: borderColors[status]
-						: '',
-					status == 'default' &&
-						value.length > 0 &&
-						!focused &&
-						iconStatus == 'close'
-						? 'bg-contentSecondary'
-						: '',
-					disabled &&
-						'bg-contentSecondary cursor-not-allowed border-borderInverseTransparent text-white/50',
-					className,
-				)}
-			>
-				<input
-					onChange={(e) => onChangeHandler(e)}
-					type="text"
-					onFocus={() => setFocused(true)}
-					onBlur={() => setFocused(false)}
-					disabled={disabled}
-					placeholder={placeholder}
-					value={value}
-					className={twMerge(
-						'bg-transparent',
-						size,
-						'outline-none w-full p-2 disabled:cursor-not-allowed',
-					)}
-				/>
+  return (
+    <div className="flex flex-col gap-1 w-[375px]">
+      {label && (
+        <div className={`flex justify-between items-center ${size} text-white/90`}>
+          <label className={sizeStyles[size]}>{label}</label>
+          {counter && (
+            <span className={`${size} text-white/50`}>
+              {value.length}/{counter.max}
+            </span>
+          )}
+        </div>
+      )}
 
-				<div
-					onClick={() => {
-						if (iconStatus == 'close') {
-							setValue('');
-						}
-					}}
-					className={'ml-2 hover:cursor-pointer'}
-				>
-					{(!cross &&
-						status == 'default' &&
-						iconStatus != 'complete' &&
-						iconStatus != 'incomplete' &&
-						iconStatus != 'loading') ||
-					(status == 'error' && !cross) ? (
-						<img src="src/assets/close.svg" alt="" />
-					) : (
-						''
-					)}
+      <div
+        className={twMerge(
+          'flex items-center border rounded-lg px-3 text-white',
+          borderColors[status],
+          sizeStyles[size],
+          status === InputStatus.DEFAULT && !disabled
+            ? focused
+              ? 'border-borderInverseSelected border-[2px]'
+              : borderColors[status]
+            : '',
+          status === InputStatus.DEFAULT &&
+            value.length > 0 &&
+            !focused &&
+            iconStatus === IconStatus.CLOSE
+            ? 'bg-contentSecondary'
+            : '',
+          disabled &&
+            'bg-contentSecondary cursor-not-allowed border-borderInverseTransparent text-white/50',
+          className,
+        )}
+      >
+        <input
+          onChange={onChangeHandler}
+          type="text"
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          disabled={disabled}
+          placeholder={placeholder}
+          value={value}
+          className={twMerge(
+            'bg-transparent outline-none w-full p-2 disabled:cursor-not-allowed',
+            size,
+          )}
+        />
 
-					{iconStatus == 'complete' ? (
-						<img src="src/assets/success.svg" alt="" />
-					) : iconStatus == 'incomplete' ? (
-						<img src="src/assets/error.svg" alt="" />
-					) : iconStatus == 'loading' ? (
-						<div className="flex items-center justify-center">
-							<div className="relative w-5 h-5">
-								<div className=" text-backgroundInverseSecondary absolute w-full h-full rounded-full border-3 border-t-[#662dff] animate-spin"></div>
-							</div>
-						</div>
-					) : null}
-				</div>
-			</div>
+        <div
+          onClick={() => {
+            if (iconStatus === IconStatus.CLOSE) {
+              setValue('');
+            }
+          }}
+          className="ml-2 hover:cursor-pointer"
+        >
+          {(!cross &&
+            status === InputStatus.DEFAULT &&
+            ![IconStatus.COMPLETE, IconStatus.INCOMPLETE, IconStatus.LOADING].includes(
+              iconStatus!
+            )) ||
+          (status === InputStatus.ERROR && !cross) ? (
+            <img src="src/assets/Icons/InputIcons/close.svg" alt="" />
+          ) : iconStatus === IconStatus.COMPLETE ? (
+            <img src="src/assets/Icons/InputIcons/success.svg" alt="" />
+          ) : iconStatus === IconStatus.INCOMPLETE ? (
+            <img src="src/assets/Icons/InputIcons/error.svg" alt="" />
+          ) : iconStatus === IconStatus.LOADING ? (
+            <div className="flex items-center justify-center">
+              <div className="relative w-5 h-5">
+                <div className="text-backgroundInverseSecondary absolute w-full h-full rounded-full border-3 border-t-[#662dff] animate-spin"></div>
+              </div>
+            </div>
+          ) : null}
+        </div>
+      </div>
 
-			<div className="flex items-center gap-2">
-				{status === 'success' ? (
-					<span>
-						<img src="src/assets/success.svg" alt="" />
-					</span>
-				) : status === 'error' ? (
-					<span>
-						<img src="src/assets/error.svg" alt="" />
-					</span>
-				) : (
-					<span></span>
-				)}
-				{hint && (
-					<span
-						className={twMerge(
-							'text-[14px]',
-							disabled ? 'text-contentInverseTertiary ' : hintColors[status],
-						)}
-					>
-						{hint}
-					</span>
-				)}
-			</div>
-		</div>
-	);
+      <div className="flex items-center gap-2">
+        {status === InputStatus.SUCCESS ? (
+          <span>
+            <img src="src/assets/Icons/InputIcons/success.svg" alt="" />
+          </span>
+        ) : status === InputStatus.ERROR ? (
+          <span>
+            <img src="src/assets/Icons/InputIcons/error.svg" alt="" />
+          </span>
+        ) : (
+          <span></span>
+        )}
+        {hint && (
+          <span
+            className={twMerge(
+              'text-[14px]',
+              disabled ? 'text-contentInverseTertiary' : hintColors[status],
+            )}
+          >
+            {hint}
+          </span>
+        )}
+      </div>
+    </div>
+  );
 };
