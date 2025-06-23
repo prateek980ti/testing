@@ -157,9 +157,9 @@ export const InputField = ({
               src={
                 showPassword
                   ? 'src/assets/Icons/InputIcons/eyeOff.svg'
-                  : 'src/assets/Icons/InputIcons/eye.svg'
+                  :value.length ?'src/assets/Icons/InputIcons/eye.svg':""
               }
-              alt="Toggle Password"
+             
             />
           </div>
         )}
