@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-// 🚀 Numeric Enums with Named Keys
 export enum IconStatus {
   COMPLETE,
   INCOMPLETE,
@@ -21,6 +20,21 @@ export enum InputStatus {
   ERROR,
 }
 
+
+export enum InputType {
+  NUMBER,
+  EMAIL,
+  PASSWORD,
+  TEXT
+}
+
+const inputTypeMap = {
+  [InputType.NUMBER]: 'number',
+  [InputType.EMAIL]: 'email',
+  [InputType.PASSWORD]: 'password',
+  [InputType.TEXT]: 'text',
+} as const;
+
 interface InputFieldProps {
   label?: string;
   hint?: string;
@@ -32,6 +46,7 @@ interface InputFieldProps {
   disabled?: boolean;
   className?: string;
   placeholder?: string;
+  type?: InputType; 
 }
 
 export const InputField = ({
@@ -45,6 +60,7 @@ export const InputField = ({
   className,
   onChange,
   placeholder = 'placeholder',
+  type = InputType.TEXT,
 }: InputFieldProps) => {
   const borderColors = {
     [InputStatus.DEFAULT]: 'border-borderOpaque',
@@ -67,6 +83,7 @@ export const InputField = ({
   const [cross, setCross] = useState(false);
   const [value, setValue] = useState('');
   const [focused, setFocused] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const counterCheck = () => {
     setCross(value.length === 0);
@@ -84,6 +101,9 @@ export const InputField = ({
       alert('Limit exceed');
     }
   }, [value]);
+
+  const isPassword = type === InputType.PASSWORD;
+  const resolvedInputType = isPassword && showPassword ? 'text' : inputTypeMap[type];
 
   return (
     <div className="flex flex-col gap-1 w-[375px]">
@@ -120,46 +140,60 @@ export const InputField = ({
         )}
       >
         <input
+          type={resolvedInputType}
           onChange={counterHandler}
-          type="text"
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           disabled={disabled}
           placeholder={placeholder}
           value={value}
-          className={twMerge(
-            'bg-transparent outline-none w-full p-2 disabled:cursor-not-allowed',
-            size,
-          )}
+          className="bg-transparent outline-none w-full p-2 disabled:cursor-not-allowed"
         />
 
-        <div
-          onClick={() => {
-            if (iconStatus === IconStatus.CLOSE) {
-              setValue('');
-            }
-          }}
-          className="ml-2 hover:cursor-pointer"
-        >
-          {(!cross &&
-            status === InputStatus.DEFAULT &&
-            ![IconStatus.COMPLETE, IconStatus.INCOMPLETE, IconStatus.LOADING].includes(
-              iconStatus!
-            )) ||
-          (status === InputStatus.ERROR && !cross) ? (
-            <img src="src/assets/Icons/InputIcons/close.svg" alt="" />
-          ) : iconStatus === IconStatus.COMPLETE ? (
-            <img src="src/assets/Icons/InputIcons/success.svg" alt="" />
-          ) : iconStatus === IconStatus.INCOMPLETE ? (
-            <img src="src/assets/Icons/InputIcons/error.svg" alt="" />
-          ) : iconStatus === IconStatus.LOADING ? (
-            <div className="flex items-center justify-center">
-              <div className="relative w-5 h-5">
-                <div className="text-backgroundInverseSecondary absolute w-full h-full rounded-full border-3 border-t-[#662dff] animate-spin"></div>
+        {/* Password toggle icon */}
+        {isPassword && (
+          <div onClick={() => setShowPassword(!showPassword)} className="cursor-pointer ml-2">
+            <img
+              src={
+                showPassword
+                  ? 'src/assets/Icons/InputIcons/eyeOff.svg'
+                  : 'src/assets/Icons/InputIcons/eye.svg'
+              }
+              alt="Toggle Password"
+            />
+          </div>
+        )}
+
+        {/* Other status-based icons */}
+        {!isPassword && (
+          <div
+            onClick={() => {
+              if (iconStatus === IconStatus.CLOSE) {
+                setValue('');
+              }
+            }}
+            className="ml-2 hover:cursor-pointer"
+          >
+            {(!cross &&
+              status === InputStatus.DEFAULT &&
+              ![IconStatus.COMPLETE, IconStatus.INCOMPLETE, IconStatus.LOADING].includes(
+                iconStatus!
+              )) ||
+            (status === InputStatus.ERROR && !cross) ? (
+              <img src="src/assets/Icons/InputIcons/close.svg" alt="" />
+            ) : iconStatus === IconStatus.COMPLETE ? (
+              <img src="src/assets/Icons/InputIcons/success.svg" alt="" />
+            ) : iconStatus === IconStatus.INCOMPLETE ? (
+              <img src="src/assets/Icons/InputIcons/error.svg" alt="" />
+            ) : iconStatus === IconStatus.LOADING ? (
+              <div className="flex items-center justify-center">
+                <div className="relative w-5 h-5">
+                  <div className="text-backgroundInverseSecondary absolute w-full h-full rounded-full border-3 border-t-[#662dff] animate-spin"></div>
+                </div>
               </div>
-            </div>
-          ) : null}
-        </div>
+            ) : null}
+          </div>
+        )}
       </div>
 
       <div className="flex items-center gap-2">
