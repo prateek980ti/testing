@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import Section2 from "../components/landing/Section-2/Section2";
 import Section1 from "../components/landing/Section1";
 import Section3 from "../components/landing/Section-3/Section3";
-import { InputField, InputType } from "../components/utils/InputField";
+import SidebarBottomIcons from "../components/sidebar/SidebarBottomIcons";
 
 const Landing = () => {
   return (
@@ -12,7 +12,8 @@ const Landing = () => {
       <Section2 />
       <Section3 />
       <Section4 />
-      <InputField  type={InputType.PASSWORD}/>
+
+      <SidebarBottomIcons notificationCount={0} />
 
       <div className="w-[80vw]">
         <Footer />
