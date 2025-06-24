@@ -10,7 +10,7 @@ interface OutlinedButtonProps {
 export function OutlinedButton({ children, onClick, className }: OutlinedButtonProps) {
 	const classes = {
 		basic:
-			'min-w-[5rem] w-auto h-[2.5rem] text-primaryB text-center flex justify-center items-center rounded-[3rem] font-medium bg-gradient-to-tl from-primaryC to-accent p-[3px]',
+			'min-w-[5rem] w-auto h-[2.5rem] text-primaryB text-center flex justify-center items-center rounded-[3rem] font-medium bg-gradient-to-tl from-primaryC to-accent p-[3px] cursor-pointer hover:scale-103 duration-300',
 		inner:
 			'w-full h-full flex gap-2 justify-center items-center bg-black rounded-[2.8rem] p-3',
 	};
