@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 export enum IconStatus {
   COMPLETE,
@@ -153,14 +155,14 @@ export const InputField = ({
         {/* Password toggle icon */}
         {isPassword && (
           <div onClick={() => setShowPassword(!showPassword)} className="cursor-pointer ml-2">
-            <img
-              src={
+            
+              {
                 showPassword
-                  ? 'src/assets/Icons/InputIcons/eyeOff.svg'
-                  :value.length ?'src/assets/Icons/InputIcons/eye.svg':""
+                  ? <FaEye />
+                  :value.length ?<FaEyeSlash/>:<></>
               }
              
-            />
+            
           </div>
         )}
 
