@@ -7,6 +7,7 @@ import Landing from './pages/Landing';
 import Login from './components/Login';
 import Register from './components/Register';
 import UploadContainer from './components/Dropbox/UploadContainer';
+import Main from './pages/MainPage';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path='/file' element={<UploadContainer/>} />
             <Route path='login' element={<Login />} />
             <Route path='register' element={<Register />} />
+            <Route path='main' element={<Main />} />
           </Route>
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>
