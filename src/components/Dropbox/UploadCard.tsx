@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export enum UploadStatus {
-  Idle = 'idle',
-  Uploading = 'uploading',
-  Failed = 'failed',
-  Complete = 'complete',
+  Idle ,
+  Uploading ,
+  Failed ,
+  Complete,
 }
 
 export enum UploadCardVariant {
