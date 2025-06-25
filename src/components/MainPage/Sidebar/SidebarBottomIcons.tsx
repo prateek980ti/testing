@@ -1,34 +1,83 @@
 import ProfileCard, { Status } from "./ProfileCard";
 
-interface INotification {
+interface SidebarBottomIconsProps {
+  collapsed: boolean;
   notificationCount: number;
 }
 
-function SidebarBottomIcons({ notificationCount }: INotification) {
+function SidebarBottomIcons({
+  collapsed,
+  notificationCount,
+}: SidebarBottomIconsProps) {
   return (
-    <div className="bg-BG-tertiary flex flex-col gap-4 p-2">
-      <div className="flex gap-3 w-full items-left justify-between">
-        <span className="flex gap-2 items-center">
-          <img src="src/assets/Icons/Sidebar/bell.svg" alt="" />
-          <h1>Notifications</h1>
-        </span>
-        <span className="bg-[#BFB2FF] items-center text-black py-1 px-2 rounded-sm ">
-          {notificationCount}
-        </span>
+    <div className="flex flex-col gap-1 w-full">
+      {/* ICON LIST */}
+      <div className="flex flex-col from-primaryC to-accent gap-1 w-full">
+        {/* Notification */}
+        <button
+          
+          className={`flex items-center ${
+            collapsed ? "justify-center" : "justify-between"
+          } px-3 py-2 rounded-full hover:bg-[#444] transition w-full`}
+        >
+          <div className="flex items-center gap-2">
+            <img
+              src="src/assets/Icons/Sidebar/bell.svg"
+              alt="Notifications"
+              className="w-5 h-5"
+            />
+            {!collapsed && (
+              <span className="text-sm text-gray-300">Notifications</span>
+            )}
+          </div>
+          {!collapsed && (
+            <span className="p-[1.5px] bg-gradient-to-bl from-primaryC to-accent rounded-[10px] inline-block">
+              <span className="bg-backgroundInverseSecondary text-white text-xs font-semibold px-3 py-[2px] rounded-[8px] flex items-center justify-center min-h-[20px]">
+                {notificationCount}
+              </span>
+            </span>
+          )}
+        </button>
+
+        {/* Support */}
+        <button
+          className={`flex items-center ${
+            collapsed ? "justify-center" : "justify-start"
+          } px-3 py-2 rounded-full hover:bg-[#444] transition w-full gap-2`}
+        >
+          <img
+            src="src/assets/Icons/Sidebar/support.svg"
+            alt="Support"
+            className="w-5 h-5"
+          />
+          {!collapsed && <span className="text-sm text-gray-300">Support</span>}
+        </button>
+
+        {/* Settings */}
+        <button
+          className={`flex items-center ${
+            collapsed ? "justify-center" : "justify-start"
+          } px-3 py-2 rounded-full hover:bg-[#444] transition w-full gap-2`}
+        >
+          <img
+            src="src/assets/Icons/Sidebar/setting.svg"
+            alt="Settings"
+            className="w-5 h-5"
+          />
+          {!collapsed && (
+            <span className="text-sm text-gray-300">Settings</span>
+          )}
+        </button>
       </div>
-      <div className="flex gap-3 w-full items-left">
-        <img src="src/assets/Icons/Sidebar/support.svg" alt="" />
-        <h1>Support</h1>
+      {/* Profile Card */}
+      <div className="pt-4 w-full">
+        <ProfileCard
+          collapsed={collapsed}
+          username="Frisson Devhub"
+          email="brooklyn@simmons.com"
+          status={Status.ONLINE}
+        />
       </div>
-      <div className="flex gap-3 w-full items-left">
-        <img src="src/assets/Icons/Sidebar/setting.svg" alt="" />
-        <h1>Settings</h1>
-      </div>
-      <ProfileCard
-        username="Frisson Devhub"
-        email="brooklyn@simmons.com"
-        status={Status.OFFLINE}
-      />
     </div>
   );
 }

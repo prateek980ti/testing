@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import SidebarBottomIcons from "./SidebarBottomIcons";
 
 function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
@@ -6,79 +7,72 @@ function Sidebar() {
   const toggleSidebar = () => setCollapsed(!collapsed);
 
   return (
-    <>
-      <div
-        className={`bg-backgroundInverseSecondary h-screen text-white transition-all duration-300 ${
-          collapsed ? "w-20 flex justify-center" : "w-64"
-        }`}
-      >
-        <div className="flex flex-col p-2 gap-4 pt-4">
-          <div
-            className={`flex ${
-              collapsed ? "justify-center" : "justify-between"
-            }`}
-          >
-            <div className="flex gap-3">
-              {!collapsed && <img src="/images/logo/logo.svg" alt="" />}
-              {!collapsed && <p className="text-[1.5rem] font-bold">Voicera</p>}
+    <div
+      className={`bg-backgroundInverseSecondary text-white transition-all duration-300 flex flex-col justify-between ${
+        collapsed ? "w-20 items-center" : "w-64"
+      } h-screen`}
+    >
+      {/* Top section */}
+      <div className="flex flex-col justify-center gap-[7px] p-4 w-full">
+        {/* Logo + Toggle */}
+        <div className={`flex items-center ${!collapsed?'justify-between':"justify-center"} w-full`}>
+          {!collapsed && (
+            <div className="flex items-center gap-3">
+              <img src="/images/logo/logo.svg" alt="Voicera" className="w-8 h-8" />
+              <p className="text-xl font-bold">Voicera</p>
             </div>
-            <button onClick={toggleSidebar} className="cursor-pointer">
-              <img src="src/assets/Icons/Sidebar/menu.svg" alt="" />
-            </button>
-          </div>
-          <div
-            className={`bg-[#333333] flex gap-2 p-2 px-2 rounded-md ${
-              collapsed ? "justify-center" : ""
-            }`}
-          >
-            <img src="src/assets/Icons/Sidebar/search.svg" alt="" />
-            {!collapsed && (
-              <input
-                type="text"
-                placeholder="Search"
-                className="outline-none"
-              />
-            )}
-          </div>
-          <div className=" flex flex-col gap-1">
-            <button className="flex cursor-pointer justify-center items-center p-[3px] h-12 hover:bg-borderInverseOpaque active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem]">
-              <div className="flex items-center gap-2 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-                <img src="src/assets/Icons/Sidebar/home.svg" alt="" />
-                {!collapsed && <p className="text-contentTertiary">Home</p>}
-              </div>
-            </button>
-            <button className="flex cursor-pointer justify-center items-center p-[3px] h-12 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem]">
-              <div className="flex items-center gap-2 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-                <img src="src/assets/Icons/Sidebar/dashboard.svg" alt="" />
-                {!collapsed && (
-                  <p className="text-contentTertiary">Dashboard</p>
-                )}
-              </div>
-            </button>
-            <button className="flex cursor-pointer justify-center items-center p-[3px] h-12 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem]">
-              <div className="flex items-center gap-2 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-                <img src="src/assets/Icons/Sidebar/campaign.svg" alt="" />
-                {!collapsed && <p className="text-contentTertiary">Campaign</p>}
-              </div>
-            </button>
-            <button className="flex cursor-pointer justify-center items-center p-[3px] h-12 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem]">
-              <div className="flex items-center gap-2 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-                <img src="src/assets/Icons/Sidebar/task.svg" alt="" />
-                {!collapsed && <p className="text-contentTertiary">Tasks</p>}
-              </div>
-            </button>
-            <button className="flex cursor-pointer justify-center items-center p-[3px] h-12 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem]">
-              <div className="flex items-center gap-2 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-                <img src="src/assets/Icons/Sidebar/reporting.svg" alt="" />
-                {!collapsed && (
-                  <p className="text-contentTertiary">Reporting</p>
-                )}
-              </div>
-            </button>
-          </div>
+          )}
+          <button onClick={toggleSidebar}>
+            <img src="src/assets/Icons/Sidebar/menu.svg" alt="menu" className="w-6  cursor-pointer h-6" />
+          </button>
+        </div>
+
+        {/* Search */}
+        <div
+          className={`bg-[#333333] flex items-center gap-2 px-3 mt-1 py-1 rounded-md ${
+            collapsed ? "justify-center" : ""
+          }`}
+        >
+          <img src="src/assets/Icons/Sidebar/search.svg" alt="search" className="w-5 h-5" />
+          {!collapsed && (
+            <input
+              type="text"
+              placeholder="Search"
+              className="bg-transparent text-white outline-none w-full placeholder-gray-400"
+            />
+          )}
+        </div>
+
+        {/* Navigation buttons */}
+        <div className="flex flex-col gap-2 w-full">
+          <button className="flex items-center gap-3 hover:bg-[#444] px-3 py-2 rounded-full transition w-full">
+            <img src="src/assets/Icons/Sidebar/home.svg" alt="Home" className="w-5 h-5" />
+            {!collapsed && <span className="text-sm text-gray-300">Home</span>}
+          </button>
+          <button className="flex items-center gap-3 hover:bg-[#444] px-3 py-2 rounded-full transition w-full">
+            <img src="src/assets/Icons/Sidebar/dashboard.svg" alt="Dashboard" className="w-5 h-5" />
+            {!collapsed && <span className="text-sm text-gray-300">Dashboard</span>}
+          </button>
+          <button className="flex items-center gap-3 hover:bg-[#444] px-3 py-2 rounded-full transition w-full">
+            <img src="src/assets/Icons/Sidebar/campaign.svg" alt="Campaign" className="w-5 h-5" />
+            {!collapsed && <span className="text-sm text-gray-300">Campaign</span>}
+          </button>
+          <button className="flex items-center gap-3 hover:bg-[#444] px-3 py-2 rounded-full transition w-full">
+            <img src="src/assets/Icons/Sidebar/task.svg" alt="Tasks" className="w-5 h-5" />
+            {!collapsed && <span className="text-sm text-gray-300">Tasks</span>}
+          </button>
+          <button className="flex items-center gap-3 hover:bg-[#444] px-3 py-2 rounded-full transition w-full">
+            <img src="src/assets/Icons/Sidebar/reporting.svg" alt="Reporting" className="w-5 h-5" />
+            {!collapsed && <span className="text-sm text-gray-300">Reporting</span>}
+          </button>
         </div>
       </div>
-    </>
+
+      {/* Bottom section (Notification, Support, Settings, Profile) */}
+      <div className="p-4 w-full">
+        <SidebarBottomIcons collapsed={collapsed} notificationCount={12} />
+      </div>
+    </div>
   );
 }
 
