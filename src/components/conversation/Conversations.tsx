@@ -4,6 +4,8 @@ const Conversation = () => {
   const [activeTab, setActiveTab] = useState('summary')
 
   return (
+    <div className="flex md:justify-center lg:justify-center justify-normal">
+
     <div className="min-h-[90vh] w-[80vw] bg-black border-[20px] border-white/80 rounded-md">
       <div className="heading p-[2px] bg-gradient-to-r from-[#B70849] to-[#662DFF]">
         <div className="flex p-5 gap-10 bg-black text-white items-center justify-between">
@@ -69,6 +71,8 @@ const Conversation = () => {
         )}
       </div>
     </div>
+        </div>
+
   )
 }
 

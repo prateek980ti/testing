@@ -13,7 +13,7 @@ const Section2: React.FC = () => {
         Discover What Sets Vociera Apart In World Of Voice Technology
       </p>
 
-      <div className="grid items-center grid-cols-3 gap-10">
+      <div className="grid gap-10 grid-cols-1 lg:grid-cols-3 items-center">
 
         <div className="flex flex-col items-end gap-10">
           {leftFeatures.map((feature, index) => (

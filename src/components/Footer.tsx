@@ -9,20 +9,18 @@ const Footer = () => {
       </div>
       <footer className=" relative z-10 bg-black pt-16 dark:bg-black md:pt-20 lg:pt-24 overflow-hidden">
         <div className="relative z-10 mx-auto px-4">
-          <div className="flex flex-wrap justify-center">
-            <div className="w-1/5 px-4 mr-10">
+          <div className="flex flex-wrap justify-center lg:px-30 text-xs">
+            <div className=" lg:w-1/5 px-4 lg:mr-10 w-full text-left">
               <div className="mb-12 w-auto lg:mb-16 group">
                 {/* Logo Section */}
-                <Link href="/" className="mb-8 inline-block group/logo">
-                  <div className="flex items-center gap-4">
+                <Link href="/" className="mb-8 inline-block group/logo ">
+                  <div className="flex items-center gap-4 ">
                     <div className="relative overflow-hidden rounded-xl group-hover/logo:scale-110 transition-transform duration-300">
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 rounded-xl"></div>
                       <img
                         src="/images/logo/logo.png"
                         alt="logo"
-                        className="w-full relative z-10 transition-transform duration-300 group-hover/logo:scale-105"
-                        width={40}
-                        height={30}
+                        className="w-10 h-10 relative z-10 transition-transform duration-300 group-hover/logo:scale-105 lg:w-[52px] lg:h-[52px]"
                       />
                     </div>
                     <div className="font-semibold text-4xl text-white">Voicera</div>
@@ -75,7 +73,7 @@ const Footer = () => {
                       />
                     </svg>
                   </a>
-                  
+
                   <a
                     href="https://www.facebook.com/profile.php?id=61560392654095"
                     aria-label="social-link"
@@ -103,181 +101,184 @@ const Footer = () => {
             </div>
 
             {/* Link Sections */}
-            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-              <div className="mb-12 lg:mb-16 group">
-                <h2 className="mb-10 text-xl font-bold text-start text-white group-hover:text-blue-600 transition-colors duration-300 relative">
-                  Company
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
-                </h2>
-                <ul className="space-y-2 flex flex-col items-start">
-                  <li>
-                    <Link
-                      href="/case-study"
-                      className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        About
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/about"
-                      className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        Press
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/about"
-                      className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        Why Voicera
-                      </span>
-                    </Link>
-                  </li>
-                </ul>
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-4  lg:gap-8">
+              <div className="w-full">
+                <div className="mb-12 lg:mb-16 group">
+                  <h2 className="mb-10 ml-3 text-xl font-bold text-start text-white group-hover:text-blue-600 transition-colors duration-300 relative">
+                    Company
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
+                  </h2>
+                  <ul className="space-y-2 flex flex-col items-start">
+                    <li>
+                      <Link
+                        href="/case-study"
+                        className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          About
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/about"
+                        className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          Press
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/about"
+                        className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          Why Voicera
+                        </span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="w-full">
+                <div className="mb-12 lg:mb-16 group">
+                  <h2 className="mb-10 ml-3 text-xl font-bold text-start text-white group-hover:text-purple-600 transition-colors duration-300 relative">
+                    Resources
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-indigo-500 group-hover:w-full transition-all duration-500"></div>
+                  </h2>
+                  <ul className="space-y-2 flex flex-col items-start">
+                    <li>
+                      <Link
+                        href="/"
+                        className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          Blog
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/"
+                        className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          For creators
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/"
+                        className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          For members
+                        </span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="w-full">
+                <div className="mb-12 lg:mb-16 group">
+                  <h2 className="mb-10 ml-3 text-xl font-bold text-start text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
+                    Useful links
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-blue-500 group-hover:w-full transition-all duration-500"></div>
+                  </h2>
+                  <ul className="space-y-2 flex flex-col items-start">
+                    <li>
+                      <Link
+                        href="/contact"
+                        className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          Advertising on Voicera
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/"
+                        className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          Vendors
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/about"
+                        className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          Support
+                        </span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="w-full">
+                <div className="mb-12 lg:mb-16 group">
+                  <h2 className="mb-10 ml-3 text-xl font-bold text-start text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
+                    Terms of Use
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-blue-500 group-hover:w-full transition-all duration-500"></div>
+                  </h2>
+                  <ul className="space-y-2 flex flex-col items-start">
+                    <li>
+                      <Link
+                        href="/contact"
+                        className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          Privacy Policy
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/"
+                        className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          Cookies Settings
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/about"
+                        className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
+                      >
+                        <span className="flex items-center">
+                          <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          Compliance Policy
+                        </span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-              <div className="mb-12 lg:mb-16 group">
-                <h2 className="mb-10 text-xl font-bold text-start text-white group-hover:text-purple-600 transition-colors duration-300 relative">
-                  Resources
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-indigo-500 group-hover:w-full transition-all duration-500"></div>
-                </h2>
-                <ul className="space-y-2 flex flex-col items-start">
-                  <li>
-                    <Link
-                      href="/"
-                      className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        Blog
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        For creators
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        For members
-                      </span>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="w-1/5 px-4 ">
-              <div className="mb-12 lg:mb-16 group">
-                <h2 className="mb-10 text-xl font-bold text-start text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
-                  Useful links
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-blue-500 group-hover:w-full transition-all duration-500"></div>
-                </h2>
-                <ul className="space-y-2 flex flex-col items-start">
-                  <li>
-                    <Link
-                      href="/contact"
-                      className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        Advertising on Voicera
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        Vendors
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/about"
-                      className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        Support
-                      </span>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="w-1/5 px-4">
-              <div className="mb-12 lg:mb-16 group">
-                <h2 className="mb-10 text-xl font-bold text-start text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
-                  Terms of Use
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-blue-500 group-hover:w-full transition-all duration-500"></div>
-                </h2>
-                <ul className="space-y-2 flex flex-col items-start">
-                  <li>
-                    <Link
-                      href="/contact"
-                      className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        Privacy Policy
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        Cookies Settings
-                      </span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/about"
-                      className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
-                    >
-                      <span className="flex items-center">
-                        <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
-                        Compliance Policy
-                      </span>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
 
           {/* Divider */}
@@ -287,7 +288,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="py-8 group">
-            <p className="text-center text-base text-[#4B4B4B] group-hover:text-gray-300 transition-colors duration-300">
+            <p className="text-center text-xs lg:text-base text-[#4B4B4B] group-hover:text-gray-300 transition-colors duration-300">
               Copyright © 2025 VoiceraInc. All right reserved. About Us Support Blog Terms Privacy Cookie Policy
             </p>
           </div>
