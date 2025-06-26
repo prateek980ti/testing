@@ -22,7 +22,6 @@ function App() {
             <Route path='/file' element={<UploadCard/>} />
             <Route path='login' element={<Login />} />
             <Route path='register' element={<Register />} />
-            <Route path='main' element={<Main />} />
           </Route>
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>

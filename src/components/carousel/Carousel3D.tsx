@@ -1,3 +1,5 @@
+"use client"
+
 import type React from "react"
 import { useState, useEffect } from "react"
 
@@ -57,60 +59,42 @@ const Carousel3D: React.FC<Carousel3DProps> = ({ images, autoplayInterval = 4000
     return visibleImages
   }
 
-  // Responsive values based on screen size
-  const getResponsiveValues = () => {
-    if (typeof window !== "undefined") {
-      const width = window.innerWidth
-      if (width < 640) {
-        // Mobile
-        return {
-          translateX: 120,
-          perspective: "600px",
-          rotateY: -15,
-          translateZ: { center: "0px", side: "-50px" },
-          translateY: { center: "8px", side: "0px" },
-        }
-      } else if (width < 1024) {
-        // Tablet
-        return {
-          translateX: 200,
-          perspective: "800px",
-          rotateY: -20,
-          translateZ: { center: "0px", side: "-75px" },
-          translateY: { center: "12px", side: "0px" },
-        }
-      }
-    }
-    // Desktop (default)
+  const getResponsiveTransform = (position: number) => {
+    // Mobile: smaller translations and perspective
+    const mobileTranslateX = position * 140
+    const mobileTranslateZ = position === 0 ? "0px" : "-50px"
+
+    // Tablet: medium translations and perspective
+    const tabletTranslateX = position * 200
+    const tabletTranslateZ = position === 0 ? "0px" : "-75px"
+
+    // Desktop: original values
+    const desktopTranslateX = position * 320
+    const desktopTranslateZ = position === 0 ? "0px" : "-100px"
+
     return {
-      translateX: 320,
-      perspective: "1200px",
-      rotateY: -25,
-      translateZ: { center: "0px", side: "-100px" },
-      translateY: { center: "16px", side: "0px" },
+      mobile: `translateX(${mobileTranslateX}px) translateY(${position === 0 ? "8px" : "0px"}) translateZ(${mobileTranslateZ}) rotateY(${position * -25}deg) ${position !== 0 ? `perspective(400px) rotateX(${position > 0 ? "2deg" : "-2deg"})` : ""}`,
+      tablet: `translateX(${tabletTranslateX}px) translateY(${position === 0 ? "12px" : "0px"}) translateZ(${tabletTranslateZ}) rotateY(${position * -25}deg) ${position !== 0 ? `perspective(600px) rotateX(${position > 0 ? "2deg" : "-2deg"})` : ""}`,
+      desktop: `translateX(${desktopTranslateX}px) translateY(${position === 0 ? "16px" : "0px"}) translateZ(${desktopTranslateZ}) rotateY(${position * -25}deg) ${position !== 0 ? `perspective(800px) rotateX(${position > 0 ? "2deg" : "-2deg"})` : ""}`,
     }
   }
 
-  const responsiveValues = getResponsiveValues()
-
   return (
     <div
-      className={`relative w-full h-[50vh] sm:h-[60vh] lg:h-[80vh] flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 ${className}`}
+      className={`relative w-full h-[50vh] sm:h-[65vh] lg:h-[80vh] flex items-center justify-center overflow-hidden ${className}`}
     >
       <div
-        className="relative w-full max-w-sm sm:max-w-2xl lg:max-w-6xl h-48 sm:h-64 lg:h-96 flex items-center justify-center"
+        className="relative w-full max-w-6xl h-48 sm:h-80 lg:h-96 flex items-center justify-center"
         style={{
-          perspective: responsiveValues.perspective,
+          perspective: window.innerWidth < 640 ? "600px" : window.innerWidth < 1024 ? "900px" : "1200px",
           perspectiveOrigin: "center center",
         }}
         onMouseEnter={() => setIsAutoplay(false)}
         onMouseLeave={() => setIsAutoplay(true)}
-        // Touch events for mobile
-        onTouchStart={() => setIsAutoplay(false)}
-        onTouchEnd={() => setIsAutoplay(true)}
       >
         {getVisibleImages().map((image, idx) => {
           const { position } = image
+          const transforms = getResponsiveTransform(position)
 
           return (
             <div
@@ -120,12 +104,12 @@ const Carousel3D: React.FC<Carousel3DProps> = ({ images, autoplayInterval = 4000
               } ${isTransitioning ? "transition-duration-300" : ""}`}
               style={{
                 transform: `
-                  translateX(${position * responsiveValues.translateX}px) 
-                  translateY(${position === 0 ? responsiveValues.translateY.center : responsiveValues.translateY.side}) 
-                  translateZ(${position === 0 ? responsiveValues.translateZ.center : responsiveValues.translateZ.side}) 
-                  rotateY(${position * responsiveValues.rotateY}deg)
-                  ${position !== 0 ? `perspective(${responsiveValues.perspective}) rotateX(${position > 0 ? "2deg" : "-2deg"})` : ""}
-                `,
+    translateX(${position * (window.innerWidth < 640 ? 110 : window.innerWidth < 1024 ? 220 : 320)}px) 
+    translateY(${position === 0 ? (window.innerWidth < 640 ? "8px" : window.innerWidth < 1024 ? "12px" : "16px") : "0px"}) 
+    translateZ(${position === 0 ? "0px" : window.innerWidth < 640 ? "-50px" : window.innerWidth < 1024 ? "-75px" : "-100px"}) 
+    rotateY(${position * -25}deg)
+    ${position !== 0 ? `perspective(${window.innerWidth < 640 ? "400px" : window.innerWidth < 1024 ? "600px" : "800px"}) rotateX(${position > 0 ? "2deg" : "-2deg"})` : ""}
+  `,
                 transformStyle: "preserve-3d",
                 transformOrigin: position > 0 ? "left center" : position < 0 ? "right center" : "center center",
               }}
@@ -133,10 +117,10 @@ const Carousel3D: React.FC<Carousel3DProps> = ({ images, autoplayInterval = 4000
             >
               {/* Image Container with Book Effect and Flat Bottom */}
               <div
-                className={`relative overflow-hidden shadow-2xl transition-all duration-1000 rounded-lg sm:rounded-xl group-hover:shadow-3xl ${
+                className={`relative overflow-hidden shadow-2xl transition-all duration-1000 rounded-xl group-hover:shadow-3xl ${
                   position === 0
-                    ? "w-32 h-40 sm:w-48 sm:h-60 lg:w-72 lg:h-90 shadow-black/50 group-hover:shadow-purple-500/30"
-                    : "w-28 h-36 sm:w-40 sm:h-52 lg:w-64 lg:h-80 shadow-black/70 group-hover:shadow-black/90"
+                    ? "w-24 h-36 sm:w-56 sm:h-72 lg:w-72 lg:h-90 shadow-black/50 group-hover:shadow-purple-500/30"
+                    : "w-24 h-44 sm:w-48 sm:h-88 lg:w-64 lg:h-110 shadow-black/70 group-hover:shadow-black/90"
                 }`}
                 style={{
                   clipPath:
@@ -194,12 +178,12 @@ const Carousel3D: React.FC<Carousel3DProps> = ({ images, autoplayInterval = 4000
                 )}
               </div>
 
-              {/* Reflection effect */}
+              {/* reflection effect */}
               <div
                 className={`absolute top-full left-0 w-full transition-all duration-1000 rounded-b-lg ${
                   position === 0
-                    ? "h-8 sm:h-12 lg:h-20 opacity-30 group-hover:opacity-40"
-                    : "h-6 sm:h-10 lg:h-16 opacity-20 group-hover:opacity-30"
+                    ? "h-8 sm:h-16 lg:h-20 opacity-30 group-hover:opacity-40"
+                    : "h-6 sm:h-12 lg:h-16 opacity-20 group-hover:opacity-30"
                 }`}
                 style={{
                   background: `linear-gradient(to bottom, 
@@ -214,24 +198,6 @@ const Carousel3D: React.FC<Carousel3DProps> = ({ images, autoplayInterval = 4000
             </div>
           )
         })}
-      </div>
-
-      {/* Navigation dots for mobile */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 sm:hidden">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex ? "bg-purple-500 w-6" : "bg-white/50 hover:bg-white/70"
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Touch indicators for mobile */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 text-xs sm:hidden">
-        Tap side images to navigate
       </div>
     </div>
   )
