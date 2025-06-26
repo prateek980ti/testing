@@ -6,8 +6,8 @@ import PublicLayout from './components/PublicLayout';
 import Landing from './pages/Landing';
 import Login from './components/Login';
 import Register from './components/Register';
-import UploadContainer from './components/Dropbox/UploadContainer';
-import Main from './pages/MainPage';
+import UploadCard from './components/Dropbox/UploadCard';
+
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<PublicLayout />}>
             <Route index element={<Landing />} />
-            <Route path='/file' element={<UploadContainer/>} />
+            <Route path='/file' element={<UploadCard/>} />
             <Route path='login' element={<Login />} />
             <Route path='register' element={<Register />} />
             <Route path='main' element={<Main />} />

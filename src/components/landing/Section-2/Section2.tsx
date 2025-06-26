@@ -9,13 +9,17 @@ const Section2: React.FC = () => {
       <h2 className="mb-2 text-4xl font-bold text-transparent bg-gradient-to-r from-pink to-purple bg-clip-text">
         WHY CHOOSE US?
       </h2>
-      <p className="mb-10 text-lg font-medium text-center text-white/80">
+      <p className="mb-10 md:text-lg font-medium text-center text-white/80">
         Discover What Sets Vociera Apart In World Of Voice Technology
       </p>
 
+<<<<<<< HEAD
       <div className="grid gap-10 grid-cols-1 lg:grid-cols-3 items-center">
+=======
+      <div className="grid gap-10 grid-cols-1 lg:grid-cols-3 items-center md:grid-cols-3">
+>>>>>>> 9cdf7cb8b65f921f6465bfcad6374eb7763d9407
 
-        <div className="flex flex-col items-end gap-10">
+        <div className="flex flex-col md:items-end gap-10 ">
           {leftFeatures.map((feature, index) => (
             <SectionContainer
               key={index}
@@ -25,14 +29,14 @@ const Section2: React.FC = () => {
             />
           ))}
         </div>
-        <div className="flex justify-center">
+        <div className="justify-center hidden md:flex">
           <video
             width="762"
             height="749"
             autoPlay
             muted
 
-            className="rounded-full"
+             className="rounded-full  md:w-[300px] lg:w-[400px] xl:w-[500px]"
           >
             <source src={earthVideo} type="video/mp4" />
             Your browser does not support the video tag.
