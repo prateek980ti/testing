@@ -53,9 +53,9 @@ const Carousel = ({
   }, [autoPlay, autoPlayInterval, currentIndex]);
 
   return (
-    <div className="relative w-full h-[75vh] bg-black overflow-hidden flex flex-col items-center justify-center px-4">
+    <div className="relative w-full min-h-[410px] bg-black flex flex-col items-center justify-center px-2 sm:px-4 ">
       {/* Cards */}
-      <div className="relative w-full max-w-6xl h-[340px] flex items-center justify-center z-10">
+      <div className="relative w-full max-w-6xl h-[300px] flex items-center justify-center z-10">
         {testimonials.map((t, i) => {
           const offset = getOffset(i);
           const absOffset = Math.abs(offset);
@@ -77,7 +77,7 @@ const Carousel = ({
               }}
             >
               <div className="bg-gradient-to-tl from-accent to-primaryC p-[2px] cursor-pointer duration-300 hover:scale-105 rounded-[2rem]">
-                <div className="bg-black rounded-[2rem] px-8 py-6 w-[600px] max-w-[90vw] h-[300px] flex flex-col gap-5">
+                <div className="relative bg-black rounded-[2rem] px-4 sm:px-6 md:px-8 py-6 w-[82vw] xs:w-[76vw] sm:w-[440px] md:w-[500px] lg:w-[600px] h-[300px] flex flex-col gap-5">
                   {offset === 0 ? (
                     <>
                       <div className="flex justify-between items-start">
@@ -85,20 +85,22 @@ const Carousel = ({
                           <img
                             src={t.image}
                             alt={t.name}
-                            className="w-14 h-14 rounded-full border-2 border-white object-cover"
+                            className="w-12 sm:w-14 h-12 sm:h-14 rounded-full border-2 border-white object-cover"
                           />
                           <div>
-                            <h3 className="text-white text-xl font-bold">
+                            <h3 className="text-white text-lg sm:text-xl font-bold">
                               {t.name}
                             </h3>
-                            <p className="text-gray-300 text-sm">{t.role}</p>
+                            <p className="text-gray-300 text-xs sm:text-sm">
+                              {t.role}
+                            </p>
                           </div>
                         </div>
                         <div className="flex space-x-1 mt-2">
                           {Array.from({ length: 5 }).map((_, i) => (
                             <span
                               key={i}
-                              className={`text-xl ${
+                              className={`text-lg sm:text-xl ${
                                 i < t.rating
                                   ? "text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500"
                                   : "text-gray-600"
@@ -109,10 +111,10 @@ const Carousel = ({
                           ))}
                         </div>
                       </div>
-                      <p className="text-white text-10 leading-relaxed mt-4">
+                      <p className="text-white text-xs sm:text-sm md:text-base leading-relaxed mt-4">
                         {t.content}
                       </p>
-                      <div className="w-[90%] h-2 bg-gradient-to-tl bottom-6 absolute blur-xl from-accent to-primaryC shadow-accent"></div>
+                      <div className="w-[90%] h-2 bg-gradient-to-tl bottom-6 absolute blur-xl from-accent to-primaryC shadow-accent" />
                     </>
                   ) : (
                     <div className="w-full h-full" />
@@ -125,7 +127,7 @@ const Carousel = ({
       </div>
 
       {/* Arrows + Dots */}
-      <div className="flex items-center justify-center mt-10 gap-6 z-20">
+      <div className="flex items-center justify-center mt-6 gap-4 z-20 ">
         {/* Left Arrow */}
         <button className="hover:cursor-pointer" onClick={prevSlide}>
           <svg
