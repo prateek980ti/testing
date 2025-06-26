@@ -30,14 +30,17 @@ function Sidebar() {
               <p className="text-xl font-bold">Voicera</p>
             </div>
           )}
-          <button onClick={toggleSidebar} className="group relative w-6 h-6 cursor-pointer">
+          <button onClick={toggleSidebar} className={`group relative w-10 h-10 cursor-pointer ${!collapsed ? "flex items-center justify-center" : "flex justify-center items-center"}`}>
             {/* Shown when NOT collapsed */}
             {!collapsed && (
+              <div className="hover:bg-[#444] h-10 w-10 rounded-sm flex items-center justify-center">
+
               <img
                 src="src/assets/Icons/Sidebar/menu.svg"
                 alt="menu"
                 className="w-6 h-6"
-              />
+                />
+                </div>
             )}
 
             {/* Shown when collapsed but NOT hovered */}
@@ -45,7 +48,7 @@ function Sidebar() {
               <img
                 src="/images/logo/logo.svg"
                 alt="menu-hover"
-                className="w-6 h-6 absolute top-0 left-0 transition-opacity duration-200 opacity-100 group-hover:opacity-0"
+                className="w-6 h-6 transition-opacity duration-200 opacity-100 group-hover:opacity-0"
               />
             )}
 
@@ -54,7 +57,7 @@ function Sidebar() {
               <img
                 src="src/assets/Icons/Sidebar/menu.svg"
                 alt="menu"
-                className="w-6 h-6 absolute top-0 left-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+                className="w-6 h-6 absolute transition-opacity duration-200 opacity-0 group-hover:opacity-100"
               />
             )}
           </button>

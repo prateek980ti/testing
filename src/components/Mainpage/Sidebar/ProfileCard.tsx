@@ -56,11 +56,14 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           </div>
 
           {/* Dots */}
+          <div className="hover:bg-[#444] p-1 rounded-full">
+
           <img
             src="src/assets/Icons/Sidebar/verticalDots.svg"
             alt="Menu"
             className="w-4 h-4 cursor-pointer"
-          />
+            />
+            </div>
         </div>
       )}
     </>
