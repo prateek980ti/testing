@@ -85,31 +85,31 @@ function Sidebar() {
 
         {/* Navigation buttons */}
         <div className="flex flex-col gap-1 w-full">
-          <button className="flex cursor-pointer justify-center items-center p-[2px] h-10 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
+          <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
             <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
               <img src="src/assets/Icons/Sidebar/home.svg" alt="" />
               {!collapsed && <p className="text-gray-300 text-sm">Home</p>}
             </div>
           </button>
-          <button className="flex cursor-pointer justify-center items-center p-[2px] h-10 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
+          <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
             <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
               <img src="src/assets/Icons/Sidebar/dashboard.svg" alt="" />
               {!collapsed && <p className="text-gray-300 text-sm">Dashboard</p>}
             </div>
           </button>
-          <button className="flex cursor-pointer justify-center items-center p-[2px] h-10 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
+          <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
             <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
               <img src="src/assets/Icons/Sidebar/campaign.svg" alt="" />
               {!collapsed && <p className="text-gray-300 text-sm">Campaign</p>}
             </div>
           </button>
-          <button className="flex cursor-pointer justify-center items-center p-[2px] h-10 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
+          <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
             <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
               <img src="src/assets/Icons/Sidebar/task.svg" alt="" />
               {!collapsed && <p className="text-gray-300 text-sm">Task</p>}
             </div>
           </button>
-          <button className="flex cursor-pointer justify-center items-center p-[2px] h-10 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
+          <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
             <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
               <img src="src/assets/Icons/Sidebar/reporting.svg" alt="" />
               {!collapsed && <p className="text-gray-300 text-sm">Reporting</p>}
@@ -119,7 +119,7 @@ function Sidebar() {
       </div>
 
       {/* Bottom section (Notification, Support, Settings, Profile) */}
-      <div className="p-4 w-full">
+      <div className="px-4 py-2 w-full">
         <SidebarBottomIcons collapsed={collapsed} notificationCount={12} />
       </div>
     </div>
