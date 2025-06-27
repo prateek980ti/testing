@@ -1,5 +1,3 @@
-
-
 import {
   InputField,
   IconStatus,
@@ -8,38 +6,32 @@ import {
 } from '../../utils/InputField';
 import { Button } from '../../utils/MainButton/Button';
 import { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useLogin } from '../../../hooks/useLogin';
 
 type Props = {
   onForgot: () => void;
   onLoginSuccess: () => void;
 };
+
 const isValidEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };
 
-
 const LoginForm: React.FC<Props> = ({ onForgot, onLoginSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
+  const { login, loading, error } = useLogin();
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    setLoading(true);
     try {
-      const res = await axios.post('http://18.171.246.223:3004/auth/login',{email,password,});
-
-      const token = res.data?.data?.access_token;
-      localStorage.setItem('authToken', token);
+      await login(email, password);
       onLoginSuccess();
       navigate('/home');
-    } catch (error: any) {
-      alert(error?.response?.data?.message || 'Login failed');
-    } finally {
-      setLoading(false);
+    } catch (err) {
+      alert(error || 'Login failed');
     }
   };
 
@@ -72,7 +64,6 @@ const LoginForm: React.FC<Props> = ({ onForgot, onLoginSuccess }) => {
             onChange={(e) => setEmail(e.target.value)}
             className="bg-transparent"
             iconStatus={isValidEmail(email) ? IconStatus.COMPLETE : undefined}
-
           />
 
           <InputField

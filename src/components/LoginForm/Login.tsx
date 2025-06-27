@@ -1,7 +1,10 @@
 import { useState } from "react";
 
 import LoginForm from "./RightPanel/LoginForm";
+import ResetPassword from "./RightPanel/ResetPassword";
 import Heading from "./LeftPanel/Heading";
+import CreatePassword from "./RightPanel/CreatePassword";
+import Done from "./RightPanel/Done";
 const Login= () => {
   const [step, setStep] = useState<"login" | "forgot" | "update" | "done">(
     "login"
@@ -50,12 +53,20 @@ const Login= () => {
 
              <LoginForm
               key={location.pathname}
-               onForgot={() => console.log('Forgot password')}
+               onForgot={() => setStep("forgot")}
                onLoginSuccess={() => console.log('Logged in!')}
              />
            </div>
 
         )}
+        {step === "forgot" && (
+          <ResetPassword onNext={() => setStep("update")} />
+        )}
+         {step === "update" && (
+          <CreatePassword onCreate={() => setStep("done")} />
+        )}
+
+        {step === "done" && <Done onLoginAgain={() => setStep("login")} />}
 
 
       </div>
