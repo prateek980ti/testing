@@ -104,7 +104,7 @@ const Footer = () => {
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-4  lg:gap-8">
               <div className="w-full">
                 <div className="mb-12 lg:mb-16 group">
-                  <h2 className="mb-10 ml-3 text-xl font-bold text-start text-white group-hover:text-blue-600 transition-colors duration-300 relative">
+                  <h2 className="mb-10  text-xl font-bold text-start text-white group-hover:text-blue-600 transition-colors duration-300 relative">
                     Company
                     <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-500"></div>
                   </h2>
@@ -114,7 +114,7 @@ const Footer = () => {
                         href="/case-study"
                         className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           About
                         </span>
@@ -125,7 +125,7 @@ const Footer = () => {
                         href="/about"
                         className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Press
                         </span>
@@ -136,7 +136,7 @@ const Footer = () => {
                         href="/about"
                         className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Why Voicera
                         </span>
@@ -148,7 +148,7 @@ const Footer = () => {
 
               <div className="w-full">
                 <div className="mb-12 lg:mb-16 group">
-                  <h2 className="mb-10 ml-3 text-xl font-bold text-start text-white group-hover:text-purple-600 transition-colors duration-300 relative">
+                  <h2 className="mb-10  text-xl font-bold text-start text-white group-hover:text-purple-600 transition-colors duration-300 relative">
                     Resources
                     <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-indigo-500 group-hover:w-full transition-all duration-500"></div>
                   </h2>
@@ -158,7 +158,7 @@ const Footer = () => {
                         href="/"
                         className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Blog
                         </span>
@@ -169,7 +169,7 @@ const Footer = () => {
                         href="/"
                         className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           For creators
                         </span>
@@ -180,7 +180,7 @@ const Footer = () => {
                         href="/"
                         className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           For members
                         </span>
@@ -192,7 +192,7 @@ const Footer = () => {
 
               <div className="w-full">
                 <div className="mb-12 lg:mb-16 group">
-                  <h2 className="mb-10 ml-3 text-xl font-bold text-start text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
+                  <h2 className="mb-10  text-xl font-bold text-start text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
                     Useful links
                     <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-blue-500 group-hover:w-full transition-all duration-500"></div>
                   </h2>
@@ -202,7 +202,7 @@ const Footer = () => {
                         href="/contact"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Advertising on Voicera
                         </span>
@@ -213,7 +213,7 @@ const Footer = () => {
                         href="/"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Vendors
                         </span>
@@ -224,7 +224,7 @@ const Footer = () => {
                         href="/about"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Support
                         </span>
@@ -236,7 +236,7 @@ const Footer = () => {
 
               <div className="w-full">
                 <div className="mb-12 lg:mb-16 group">
-                  <h2 className="mb-10 ml-3 text-xl font-bold text-start text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
+                  <h2 className="mb-10  text-xl font-bold text-start text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
                     Terms of Use
                     <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-blue-500 group-hover:w-full transition-all duration-500"></div>
                   </h2>
@@ -246,7 +246,7 @@ const Footer = () => {
                         href="/contact"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Privacy Policy
                         </span>
@@ -257,7 +257,7 @@ const Footer = () => {
                         href="/"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Cookies Settings
                         </span>
@@ -268,7 +268,7 @@ const Footer = () => {
                         href="/about"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="flex items-center">
+                        <span className="">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Compliance Policy
                         </span>
