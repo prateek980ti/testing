@@ -100,7 +100,7 @@ const Carousel = ({
                           {Array.from({ length: 5 }).map((_, i) => (
                             <span
                               key={i}
-                              className={`text-lg sm:text-xl ${
+                              className={`text-[14px]  sm:text-xl ${
                                 i < t.rating
                                   ? "text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500"
                                   : "text-gray-600"
@@ -131,7 +131,7 @@ const Carousel = ({
         {/* Left Arrow */}
         <button className="hover:cursor-pointer" onClick={prevSlide}>
           <svg
-            className="w-6 h-6 rotate-180"
+            className="w-6 h-6 max-sm:w-5 max-sm:h-5 rotate-180"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +151,7 @@ const Carousel = ({
             <button
               key={i}
               onClick={() => goToSlide(i)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 max-sm:h-2 max-sm:w-2 rounded-full transition-all duration-300 ${
                 i === currentIndex
                   ? "bg-purple-500 scale-125 shadow-md"
                   : "bg-gray-500 hover:bg-gray-400"
@@ -163,7 +163,7 @@ const Carousel = ({
         {/* Right Arrow */}
         <button className="hover:cursor-pointer" onClick={nextSlide}>
           <svg
-            className="w-6 h-6"
+            className="w-6 h-6 max-sm:w-5 max-sm:h-5"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
