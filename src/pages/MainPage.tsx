@@ -1,10 +1,12 @@
 import React from 'react'
 import Sidebar from '../components/Mainpage/Sidebar/Sidebar'
+import Aivoice from '../components/Mainpage/Ai-voice/Aivoice'
 
 function MainPage() {
   return (
-    <div>
+    <div className='flex'>
       <Sidebar />
+      <Aivoice />
     </div>
   )
 }
