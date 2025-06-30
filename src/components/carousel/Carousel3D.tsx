@@ -81,7 +81,7 @@ const Carousel3D: React.FC<Carousel3DProps> = ({ images, autoplayInterval = 4000
 
   return (
     <div
-      className={`relative w-full h-[50vh] sm:h-[65vh] lg:h-[80vh] flex items-center justify-center overflow-hidden ${className}`}
+      className={`relative w-full sm:h-[65vh] lg:h-[80vh] flex items-center justify-center overflow-hidden ${className}`}
     >
       <div
         className="relative w-full max-w-6xl h-48 sm:h-80 lg:h-96 flex items-center justify-center"
