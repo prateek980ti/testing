@@ -20,7 +20,6 @@ const Footer = () => {
                       <img
                         src="/images/logo/logo.png"
                         alt="logo"
-                        className="w-10 h-10 relative z-10 transition-transform duration-300 group-hover/logo:scale-105 lg:w-[52px] lg:h-[52px]"
                       />
                     </div>
                     <div className="font-semibold text-4xl text-white">Voicera</div>
