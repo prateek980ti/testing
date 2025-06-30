@@ -28,7 +28,7 @@ export function Button({
 			primary:
 				'before:bg-gradient-to-r before:from-primaryC before:to-accent hover:before:from-[#8a0838] hover:before:to-[#512abd] border-none',
 			secondary:
-				'before:bg-gradient-to-r before:from-contentSecondary before:to-contentInverseSecondary hover:before:from-contentSecondary/80 hover:before:to-contentInverseSecondary/80 border-none',
+				'before:bg-gradient-to-r before:from-[#404040] before:to-[#bbbbbb] hover:before:from-[#2e2d2d] hover:before:to-[#a3a2a2] border-none',
 			outlined:
 				'border-borderInverseOpaque processing:bg-primaryB/10 hover:bg-primaryB/10',
 			tertiary: 'hover:bg-primaryB/10 disabled:bg-transparent border-none',

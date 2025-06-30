@@ -10,9 +10,9 @@ function Section1() {
   ];
 
   return (
-    <div className="px-4 pt-4">
-      <div className="w-full min-h-screen bg-contain bg-no-repeat bg-center bg-[url('/src/assets/Icons/folder.png')] overflow-hidden">
-        <div className="pt-9 pl-4 sm:pl-8">
+    <div className="px-4 pt-4 font-primary">
+      <div className="w-full min-h-screen">
+        <div className="pl-4 max-sm:hidden">
           <Header />
         </div>
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import Sidebar from '../components/Mainpage/Sidebar/Sidebar'
 import Aivoice from '../components/Mainpage/Ai-voice/Aivoice'
 
