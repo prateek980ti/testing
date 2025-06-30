@@ -10,13 +10,13 @@ function Section1() {
   ];
 
   return (
-    <div className="pt-4 max-md:pt-0">
+    <div className="pt-4 max-lg:pt-0">
       <div className="w-full min-h-full">
-        <div className="pl-4 max-md:hidden">
+        <div className="pl-4 max-lg:hidden">
           <Header />
         </div>
 
-        <div className="bg-gradient-to-r from-primaryC to-accent w-full p-[2px] min-md:hidden">
+        <div className="bg-gradient-to-r from-primaryC to-accent w-full p-[2px] min-lg:hidden">
           <div className="bg-black flex justify-between px-4 py-2">
             <div className="flex gap-3.5 justify-center items-center pl-2">
               <img src="src/assets/Icons/Voicera.svg" alt="" />
