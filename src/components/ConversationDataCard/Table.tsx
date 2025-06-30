@@ -68,10 +68,10 @@ const HeaderCell = ({ label }: { label: string }) => (
 
 function Table({ data }: TableProps) {
   return (
-    <div className="w-full overflow-x-auto">
+    <div className="w-full h-screen min-h-[92vh]">
       <table className="min-w-full bg-[#2C2C2C] text-white text-sm overflow-hidden">
         <thead>
-          <tr className="bg-[#2C2C2C] uppercase text-xs font-bold">
+          <tr className="bg-[#2C2C2C]  w-full mb-10 uppercase text-xs font-bold">
             <th className="px-2 py-3">Tracking ID</th>
             <th className="px-2 py-3">
               <HeaderCell label="Mobile No." />
@@ -94,13 +94,13 @@ function Table({ data }: TableProps) {
             <th className="px-2 py-3">Conversation</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           {data.map((item, i) => (
             <tr
               key={i}
               className="border-b border-[#333333] odd:bg-[#333333] hover:bg-[#6c6c7f] transition-all"
             >
-              <td className="px-2 py-3 whitespace-nowrap">#{item.trackingid}</td>
+              <td className="px-2 py-3 text-center whitespace-nowrap">#{item.trackingid}</td>
 
               <td className="px-2 py-3 whitespace-nowrap">
                 <div className="flex items-center gap-2">
@@ -115,10 +115,10 @@ function Table({ data }: TableProps) {
                 </div>
               </td>
 
-              <td className="px-2 py-3 whitespace-nowrap">{item.customer}</td>
-              <td className="px-2 py-3 whitespace-nowrap">{item.date}</td>
-              <td className="px-2 py-3 whitespace-nowrap">{item.callduration}</td>
-              <td className="px-2 py-3 whitespace-nowrap">{item.lead} %</td>
+              <td className="px-2 py-3 text-center whitespace-nowrap">{item.customer}</td>
+              <td className="px-2 py-3 text-center whitespace-nowrap">{item.date}</td>
+              <td className="px-2 py-3 text-center whitespace-nowrap">{item.callduration}</td>
+              <td className="px-2 py-3 text-center whitespace-nowrap">{item.lead} %</td>
 
               <td className="px-2 py-3 whitespace-nowrap">
                 <div className="flex justify-center">
