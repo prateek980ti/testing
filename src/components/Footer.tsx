@@ -114,7 +114,7 @@ const Footer = () => {
                         href="/case-study"
                         className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           About
                         </span>
@@ -125,7 +125,7 @@ const Footer = () => {
                         href="/about"
                         className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Press
                         </span>
@@ -136,7 +136,7 @@ const Footer = () => {
                         href="/about"
                         className="inline-block text-base text-white duration-300 hover:text-blue-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-blue-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Why Voicera
                         </span>
@@ -158,7 +158,7 @@ const Footer = () => {
                         href="/"
                         className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Blog
                         </span>
@@ -169,7 +169,7 @@ const Footer = () => {
                         href="/"
                         className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           For creators
                         </span>
@@ -180,7 +180,7 @@ const Footer = () => {
                         href="/"
                         className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           For members
                         </span>
@@ -202,7 +202,7 @@ const Footer = () => {
                         href="/contact"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Advertising on Voicera
                         </span>
@@ -213,7 +213,7 @@ const Footer = () => {
                         href="/"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Vendors
                         </span>
@@ -224,7 +224,7 @@ const Footer = () => {
                         href="/about"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Support
                         </span>
@@ -246,7 +246,7 @@ const Footer = () => {
                         href="/contact"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Privacy Policy
                         </span>
@@ -257,7 +257,7 @@ const Footer = () => {
                         href="/"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Cookies Settings
                         </span>
@@ -268,7 +268,7 @@ const Footer = () => {
                         href="/about"
                         className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
-                        <span className="">
+                        <span className="flex justify-center items-center">
                           <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Compliance Policy
                         </span>
