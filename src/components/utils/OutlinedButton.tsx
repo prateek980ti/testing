@@ -5,12 +5,14 @@ interface OutlinedButtonProps {
   children?: ReactNode;
   onClick?: () => void;
   className?: string;
+  InnerClass?: string;
 }
 
 export function OutlinedButton({
   children,
   onClick,
   className,
+  InnerClass
 }: OutlinedButtonProps) {
   const classes = {
     basic:
@@ -21,7 +23,7 @@ export function OutlinedButton({
 
   return (
     <button className={twMerge(classes.basic, className)} onClick={onClick}>
-      <div className={classes.inner}>{children}</div>
+      <div className={twMerge(classes.inner, InnerClass)}>{children}</div>
     </button>
   );
 }
