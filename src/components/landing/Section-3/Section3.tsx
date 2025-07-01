@@ -3,7 +3,7 @@ import TestimonialsArray from "./TestimonialsEx";
 
 function Testimonials() {
   return (
-    <div className="w-full min-h-screen bg-black text-white flex flex-col items-center justify-center overflow-hidden">
+    <div className="w-full min-h-full bg-black text-white flex flex-col items-center justify-center overflow-hidden">
       {/* Hexagon + Heading Section */}
       <div className="w-full flex relative justify-center">
         <img

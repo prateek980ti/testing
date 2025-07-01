@@ -23,7 +23,7 @@ export function Button({
 }: ButtonProps) {
 	const classes = {
 		basic:
-			"relative z-10 text-primaryB text-center flex justify-center items-center disabled:before:hidden disabled:bg-disabled relative before:content-[''] before:block border before:-z-10 before:absolute before:inset-0 rounded-lg before:rounded-lg font-medium hover:bg-primaryA/10 cursor-pointer",
+			"font-primary relative z-10 text-primaryB text-center flex justify-center items-center disabled:before:hidden disabled:bg-disabled relative before:content-[''] before:block border before:-z-10 before:absolute before:inset-0 rounded-lg before:rounded-lg font-medium hover:bg-primaryA/10 cursor-pointer",
 		variant: {
 			primary:
 				'before:bg-gradient-to-r before:from-primaryC before:to-accent hover:before:from-[#8a0838] hover:before:to-[#512abd] border-none',
