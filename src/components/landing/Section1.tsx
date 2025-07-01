@@ -10,7 +10,7 @@ function Section1() {
   ];
 
   return (
-    <div className="pt-4 max-lg:pt-0">
+    <div className="pt-4 max-lg:pt-0 bg-gradient-to-r from-[#662DFF]/20 via-black to-[#B70849]/20">
       <div className="w-full min-h-full">
         <div className="pl-4 max-lg:hidden">
           <Header />
