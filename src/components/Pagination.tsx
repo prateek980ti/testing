@@ -47,8 +47,8 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages }) => {
         <OutlinedButton
           key={page}
           onClick={() => setCurrentPage(page)}
-          className="p-[2px] min-w-[2vw] h-8 rounded-sm"
-          InnerClass={`rounded-sm ${
+          className="p-[2px] min-w-8 h-8 rounded-[5px]"
+          InnerClass={`rounded-[5px] ${
             page === currentPage ? " bg-BG-tertiary " : ""
           }`}
         >
