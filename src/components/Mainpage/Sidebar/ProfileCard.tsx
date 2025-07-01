@@ -44,7 +44,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             <img
               src={avatar}
               alt="Avatar"
-              className="w-full h-full rounded-full object-cover"
+              className=" w-auto rounded-full object-cover"
             />
             <span className={statusDotClass}></span>
           </div>

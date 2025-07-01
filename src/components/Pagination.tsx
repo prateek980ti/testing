@@ -31,7 +31,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages }) => {
   const visiblePages = getVisiblePages();
 
   return (
-    <div className=" h-[8vh] w-full  flex justify-center select-none items-center gap-4  bg-[#1C1C1C]">
+    <div className=" h-[10vh] w-full  flex justify-center select-none items-center gap-4 py-4 bg-[#1C1C1C]">
       <div
         onClick={() => {
           if (currentPage > 1) setCurrentPage(currentPage - 1);
@@ -47,9 +47,9 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages }) => {
         <OutlinedButton
           key={page}
           onClick={() => setCurrentPage(page)}
-          className="p-[2px] min-w-[2vw] h-8 rounded-sm"
-          InnerClass={`rounded-sm ${
-            page === currentPage ? " bg-BG-tertiary " : ""
+          className="p-[2px] min-w-8 h-8 rounded-[8px]"
+          InnerClass={`rounded-[6px] ${
+            page === currentPage ? " bg-[#1C1C1C] " : ""
           }`}
         >
           {page}
