@@ -15,7 +15,7 @@ export interface CardProps {
   progress: number;
 }
 
-const CompaignCard: React.FC<CardProps> = ({
+const CampaignCard: React.FC<CardProps> = ({
   title,
   description,
   tags,
@@ -107,4 +107,4 @@ const CompaignCard: React.FC<CardProps> = ({
   );
 };
 
-export default CompaignCard;
+export default CampaignCard;
