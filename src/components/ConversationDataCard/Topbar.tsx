@@ -6,7 +6,7 @@ import { MdAdd } from "react-icons/md";
 function Topbar() {
   return (
     <div className="flex w-full p-1.5 justify-between bg-[#2C2C2C]">
-      <div className="border-white h-8 px-2 rounded-sm w-[30vw] justify-start gap-2 border  items-center py-2 text-white flex bg-[#2C2C2C]">
+      <div className="border-white h-8 px-2 py-[9px] rounded-[8px] w-[30vw] justify-start gap-2 border  items-center  text-white flex bg-[#2C2C2C]">
         <CgSearch className="" />
         <input
           type="text"
