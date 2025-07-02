@@ -23,7 +23,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 }) => {
   const statusDotClass = twMerge(
     "absolute -top-0.5 -right-0.5 h-3 w-3 rounded-full",
-    status === Status.ONLINE ? "bg-green-400" : "bg-red-500"
+    status === Status.ONLINE ? "bg-[#B5FFC1]" : "bg-red-500"
   );
 
   return (
@@ -44,7 +44,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             <img
               src={avatar}
               alt="Avatar"
-              className="w-full h-full rounded-full object-cover"
+              className=" w-auto rounded-full object-cover"
             />
             <span className={statusDotClass}></span>
           </div>
