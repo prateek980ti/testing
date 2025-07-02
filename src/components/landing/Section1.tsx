@@ -11,7 +11,7 @@ function Section1() {
     { id: 3, src: "/images/Section1_Images/ticket 3.png" },
   ];
 
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
     <div className="pt-4 max-lg:pt-0 bg-gradient-to-r from-accent/20 via-black to-primaryC/20">
