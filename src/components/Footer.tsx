@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { IconButton } from "./utils/IconButton";
 
 const Footer = () => {
   return (
@@ -33,13 +34,14 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/social flex items-center justify-center w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg text-white duration-300 hover:scale-110 transition-all"
+                    className="group/social"
                   >
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
+                    <IconButton className="hover:scale-110 transition-all duration-300 cursor-pointer w-10 h-10">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                       className="transition-transform duration-300 group-hover/social:scale-110"
                     >
@@ -47,6 +49,7 @@ const Footer = () => {
                       <path d="M12 5.89258C8.6388 5.89258 5.89258 8.6388 5.89258 12C5.89258 15.3612 8.6388 18.1074 12 18.1074C15.3612 18.1074 18.1074 15.3612 18.1074 12C18.1074 8.6388 15.3612 5.89258 12 5.89258ZM12 15.804C10.0524 15.804 8.4708 14.2224 8.4708 12.2748C8.4708 10.3272 10.0524 8.7456 12 8.7456C13.9476 8.7456 15.5292 10.3272 15.5292 12.2748C15.5292 14.2224 13.9476 15.804 12 15.804Z" fill="currentColor" />
                       <path d="M19.7715 5.5383C20.3607 5.5383 20.8383 5.0607 20.8383 4.4715C20.8383 3.8823 20.3607 3.4047 19.7715 3.4047C19.1823 3.4047 18.7047 3.8823 18.7047 4.4715C18.7047 5.0607 19.1823 5.5383 19.7715 5.5383Z" fill="currentColor" />
                     </svg>
+                  </IconButton>
                   </a>
 
                   <a
@@ -54,8 +57,10 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/social flex items-center justify-center w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg text-white duration-300 hover:scale-110 transition-all"
+                    className="group/social"
                   >
+
+                    <IconButton className="hover:scale-110 transition-all duration-300 cursor-pointer w-10 h-10">
                     <svg
                       width="18"
                       height="18"
@@ -71,6 +76,7 @@ const Footer = () => {
                         fill="currentColor"
                       />
                     </svg>
+                    </IconButton>
                   </a>
 
                   <a
@@ -78,8 +84,10 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/social flex items-center justify-center w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg text-white duration-300 hover:scale-110 transition-all"
+                    className="group/social"
                   >
+                    <IconButton className="hover:scale-110 transition-all duration-300 cursor-pointer w-10 h-10">
+
                     <svg
                       width="18"
                       height="18"
@@ -87,12 +95,13 @@ const Footer = () => {
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                       className="transition-transform duration-300 group-hover/social:scale-110"
-                    >
+                      >
                       <path
                         d="M12.1 10.4939V7.42705C12.1 6.23984 13.085 5.27741 14.3 5.27741H16.5V2.05296L13.5135 1.84452C10.9664 1.66676 8.8 3.63781 8.8 6.13287V10.4939H5.5V13.7183H8.8V20.1667H12.1V13.7183H15.4L16.5 10.4939H12.1Z"
                         fill="currentColor"
-                      />
+                        />
                     </svg>
+                    </IconButton>
                   </a>
 
                 </div>
@@ -147,18 +156,18 @@ const Footer = () => {
 
               <div className="w-full">
                 <div className="mb-12 lg:mb-16 group">
-                  <h2 className="mb-10  text-xl font-bold text-start text-white group-hover:text-purple-600 transition-colors duration-300 relative">
+                  <h2 className="mb-10  text-xl font-bold text-start text-white group-hover:text-indigo-600 transition-colors duration-300 relative">
                     Resources
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-indigo-500 group-hover:w-full transition-all duration-500"></div>
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-blue-500 group-hover:w-full transition-all duration-500"></div>
                   </h2>
                   <ul className="space-y-2 flex flex-col items-start">
                     <li>
                       <Link
                         href="/"
-                        className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
+                        className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
                         <span className="flex justify-center items-center">
-                          <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           Blog
                         </span>
                       </Link>
@@ -166,10 +175,10 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/"
-                        className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
+                        className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
                         <span className="flex justify-center items-center">
-                          <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           For creators
                         </span>
                       </Link>
@@ -177,10 +186,10 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/"
-                        className="inline-block text-base text-white duration-300 hover:text-purple-600 group/link relative"
+                        className="inline-block text-base text-white duration-300 hover:text-indigo-600 group/link relative"
                       >
                         <span className="flex justify-center items-center">
-                          <div className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          <div className="w-1 h-1 bg-indigo-500 rounded-full mr-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
                           For members
                         </span>
                       </Link>

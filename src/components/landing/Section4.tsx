@@ -33,7 +33,7 @@ interface InfoCardProps {
 
 const InfoCard: React.FC<InfoCardProps> = ({ svg, title, description }) => {
   return (
-    <div className='w-full  h-90 bg-gradient-to-br from-[#B70849] to-[#652CFE] p-0.5 rounded-4xl'>
+    <div className='w-full  h-90 bg-gradient-to-br from-primaryC to-accent font-secondary p-0.5 rounded-4xl'>
       <div className='w-full h-full bg-black rounded-4xl flex flex-col items-center p-4'>
         {/* Icon section - fixed height */}
         <div className="w-fit h-16 my-6 flex items-center justify-center" dangerouslySetInnerHTML={{ __html: svg }} />
@@ -71,11 +71,11 @@ const InfoCard: React.FC<InfoCardProps> = ({ svg, title, description }) => {
 const Section4 = () => {
   return (
     <section className='py-10 px-4 sm:px-10 w-full'>
-      <h1 className='text-[#662DFF] text-4xl sm:text-7xl font-medium'>Need Help?</h1>
-      <h2 className='text-2xl sm:text-5xl font-medium my-6 tracking-wide'>
+      <h1 className='text-accent text-4xl sm:text-6xl font-medium font-primary'>Need Help?</h1>
+      <h2 className='text-2xl font-secondary sm:text-4xl font-medium my-5 tracking-wide'>
         SUPPORT THAT SPEAKS<br />YOUR LANGUAGE
       </h2>
-      <p className="text-sm sm:text-base">
+      <p className="text-sm sm:text-base font-secondary">
         Quick answers, real-time help, and detailed guides — all built to<br />support and empower developers."
       </p>
 
