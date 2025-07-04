@@ -3,6 +3,7 @@ import { OutlinedButton } from "../utils/OutlinedButton";
 import Carousel3D from "../carousel/Carousel3D";
 import { useState } from "react";
 import { Button } from "../utils/MainButton/Button";
+import { Link } from "react-router-dom";
 
 function Section1() {
 const images = [
