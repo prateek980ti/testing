@@ -1,18 +1,17 @@
-
-
 import { useState } from 'react';
 import { InputField, InputSize, IconStatus, InputType } from '../../utils/InputField';
 import { Button } from '../../utils/MainButton/Button';
-import { useResetPassword } from '../../../hooks/useResetPassword';
+import { forgotPassword } from '../../../api/auth.ts';
 
 type Props = {
   onNext: () => void;
   onBackToLogin: () => void;
 };
 
-const ResetPassword: React.FC<Props> = ({ onNext,onBackToLogin }) => {
+const ResetPassword: React.FC<Props> = ({ onNext, onBackToLogin }) => {
   const [email, setEmail] = useState('');
-  const { sendResetEmail, loading, error } = useResetPassword();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,12 +21,17 @@ const ResetPassword: React.FC<Props> = ({ onNext,onBackToLogin }) => {
       return;
     }
 
+    setLoading(true);
+    setError(null);
+
     try {
-      await sendResetEmail(email);
-      alert('OTP sent to your email');
+      const res = await forgotPassword(email);
+      alert(res?.message || 'OTP sent to your email');
       onNext();
-    } catch {
-      alert(error);
+    } catch (err: any) {
+      setError(err?.response?.data?.message || 'Something went wrong');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -57,15 +61,16 @@ const ResetPassword: React.FC<Props> = ({ onNext,onBackToLogin }) => {
           <Button variant="primary" size="md" className="w-[380px] mt-6" disabled={loading}>
             {loading ? 'Sending...' : 'Next'}
           </Button>
+
+          {error && <p className="text-red-500 mt-2">{error}</p>}
         </form>
 
         <div
-  className="text-center text-blue-500 underline cursor-pointer"
-  onClick={onBackToLogin}
->
-  Return to Log in
-</div>
-
+          className="text-center text-blue-500 underline cursor-pointer"
+          onClick={onBackToLogin}
+        >
+          Return to Log in
+        </div>
       </div>
     </div>
   );

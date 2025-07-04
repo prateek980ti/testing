@@ -7,7 +7,7 @@ import {
 import { Button } from '../../utils/MainButton/Button';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useLogin } from '../../../hooks/useLogin';
+import { loginUser } from '../../../api/auth';
 
 type Props = {
   onForgot: () => void;
@@ -22,16 +22,19 @@ const isValidEmail = (email: string): boolean => {
 const LoginForm: React.FC<Props> = ({ onForgot, onLoginSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login, loading, error } = useLogin();
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async () => {
+    setLoading(true);
     try {
-      await login(email, password);
+      await loginUser(email, password);
       onLoginSuccess();
       navigate('/home');
-    } catch (err) {
-      alert(error || 'Login failed');
+    } catch (err: any) {
+      alert(err?.response?.data?.message || 'Login failed');
+    } finally {
+      setLoading(false);
     }
   };
 
