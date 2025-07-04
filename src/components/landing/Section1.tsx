@@ -92,7 +92,9 @@ function Section1() {
                     size="xs"
                     className="text-xs min-w-10 h-6.5 font-light"
                   >
-                    Login
+                    <Link to="/login">
+                      Login
+                    </Link>
                   </Button>
                   <Button
                     size="xs"

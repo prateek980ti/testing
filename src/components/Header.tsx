@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Button } from "./utils/MainButton/Button"
 import { OutlinedButton } from "./utils/OutlinedButton"
 
@@ -19,7 +20,9 @@ export function Header() {
     </div>
     <div className="flex gap-4">
         <Button variant="primary" size="xs" processing={false} disabled={false}>
+          <Link to="/login">
           Login
+          </Link>
         </Button>
         <Button variant="primary" size="xs" processing={false} disabled={false}>
           Sign Up
