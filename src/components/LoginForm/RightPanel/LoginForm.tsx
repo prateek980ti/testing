@@ -85,9 +85,9 @@ const LoginForm: React.FC<Props> = ({ onForgot, onLoginSuccess }) => {
             size="md"
             onClick={handleLogin}
             className="w-[380px] mt-5"
-            disabled={loading}
+            processing={loading}
           >
-            {loading ? 'Logging in...' : 'Log in'}
+            Log In
           </Button>
         </form>
 

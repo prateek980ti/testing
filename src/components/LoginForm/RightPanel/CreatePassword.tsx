@@ -78,8 +78,8 @@ const CreatePassword: React.FC<Props> = ({ onCreate }) => {
 
           {error && <p className="text-red-500 text-sm">{error}</p>}
 
-          <Button variant="primary" size="md" className="w-[380px] mt-6" disabled={loading}>
-            {loading ? 'Resetting...' : 'Create Password'}
+          <Button variant="primary" size="md" className="w-[380px] mt-6" processing={loading}>
+            Create Password
           </Button>
         </form>
       </div>

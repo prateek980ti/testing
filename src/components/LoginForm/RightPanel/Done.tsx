@@ -1,4 +1,5 @@
-import LoginButton from "./LoginButton";
+import { Button } from "../../utils/MainButton/Button";
+
 
 type Props = {
   onLoginAgain: () => void;
@@ -24,7 +25,7 @@ const Done: React.FC<Props> = ({ onLoginAgain }) => {
             <h1 className="mb-4 text-xl">Password Updated</h1>
            <p>Your password has been updated successfully .Please log in to continue using Voicera </p>
           </div>
-          <LoginButton onClick={onLoginAgain}>Log In Now</LoginButton>
+          <Button variant="primary" size="xs" className="w-[143px] px-1 py-3 rounded-xl font-semibold h-auto text-primaryA before:bg-primaryB" onClick={onLoginAgain}>Log In Now</Button>
 
         </div>
       </div>

@@ -58,8 +58,8 @@ const ResetPassword: React.FC<Props> = ({ onNext, onBackToLogin }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          <Button variant="primary" size="md" className="w-[380px] mt-6" disabled={loading}>
-            {loading ? 'Sending...' : 'Next'}
+          <Button variant="primary" size="md" className="w-[380px] mt-6" processing={loading}>
+            Next
           </Button>
 
           {error && <p className="text-red-500 mt-2">{error}</p>}
