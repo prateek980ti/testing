@@ -5,11 +5,13 @@ import { useState } from "react";
 import { Button } from "../utils/MainButton/Button";
 
 function Section1() {
-  const images = [
-    { id: 1, src: "/images/Section1_Images/hand ticket.png" },
-    { id: 2, src: "/images/Section1_Images/ticket 2.png" },
-    { id: 3, src: "/images/Section1_Images/ticket 3.png" },
-  ];
+const images = [
+  { id: 1, src: "/images/Section1_Images/main.png", alt: "Colorful event ticket illustration" },
+  { id: 2, src: "/images/Section1_Images/robot-hand.png", alt: "robot hand " },
+  { id: 3, src: "/images/Section1_Images/space-object.png", alt: "space-object" },
+  { id: 4, src: "/images/Section1_Images/mic.png", alt: "mic" },
+];
+
 
   const [collapsed, setCollapsed] = useState(false);
 
