@@ -7,6 +7,7 @@ import Landing from './pages/Landing';
 import Login from './components/LoginForm/Login';
 import Register from './components/Register';
 import UploadCard from './components/Dropbox/UploadCard';
+import MainPage from './pages/MainPage';
 
 
 
@@ -22,6 +23,7 @@ function App() {
             <Route path='/file' element={<UploadCard/>} />
             <Route path='login' element={<Login />} />
             <Route path='register' element={<Register />} />
+            <Route path='main' element={<MainPage />} />
           </Route>
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>

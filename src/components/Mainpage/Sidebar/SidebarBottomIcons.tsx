@@ -30,8 +30,8 @@ function SidebarBottomIcons({
 
             {/* Notification count */}
             {!collapsed && (
-              <span className="p-[1.5px] bg-gradient-to-bl from-primaryC to-accent rounded-[10px] inline-block">
-                <span className="bg-backgroundInverseSecondary text-white text-xs font-semibold px-3 py-[2px] rounded-[8px] flex items-center justify-center min-h-[20px]">
+              <span className=" bg-gradient-to-br from-primaryC  to-accent p-[2px] rounded-[10px]">
+                <span className=" bg-[#1e1e1e] text-white text-sm font-semibold w-[28px] h-[28px] rounded-[8px] flex items-center justify-center">
                   {notificationCount}
                 </span>
               </span>

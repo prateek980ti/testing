@@ -8,7 +8,7 @@ interface Props {
 
 const ChooseContainer: React.FC<Props> = ({ icon, title, description }) => {
   return (
-    <div className="text-center w-[300px] py-2">
+    <div className="text-center font-secondary w-[300px] py-2">
       <div className="transition-transform duration-300 hover:scale-105 h-[96] w-[96]  ">
        <div className="flex items-center justify-center"> {icon}</div>
         <h3 className="text-[22px] font-semibold my-3 text-primaryB">{title}</h3>

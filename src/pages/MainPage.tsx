@@ -1,12 +1,14 @@
-import React from 'react'
-import Sidebar from '../components/Mainpage/Sidebar/Sidebar'
+import Sidebar from "../components/Mainpage/Sidebar/Sidebar";
+// import Aivoice from '../components/Mainpage/Ai-voice/Aivoice'
+import ConversationTableSection from "../components/ConversationDataCard/conversationTableSection";
 
 function MainPage() {
   return (
-    <div>
+    <div className="flex min-hull h-screen">
       <Sidebar />
+      <ConversationTableSection />
     </div>
-  )
+  );
 }
 
-export default MainPage
+export default MainPage;
