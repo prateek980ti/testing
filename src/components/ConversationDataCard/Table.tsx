@@ -2,13 +2,15 @@ import { twMerge } from "tailwind-merge";
 import { BsThreeDots } from "react-icons/bs";
 import { FaSort } from "react-icons/fa";
 
-export enum SENTIMENT {
-  HIGHLYINTERESTED,
-  INTERESTED,
-  NOTINTERESTED,
-  REJECTED,
-  NEUTRAL,
-}
+export const SENTIMENT = {
+  HIGHLYINTERESTED: "HIGHLYINTERESTED",
+  INTERESTED: "INTERESTED",
+  NOTINTERESTED: "NOTINTERESTED",
+  REJECTED: "REJECTED",
+  NEUTRAL: "NEUTRAL",
+} as const;
+
+export type SENTIMENT = typeof SENTIMENT[keyof typeof SENTIMENT];
 
 interface Idata {
   trackingid: string;
@@ -58,6 +60,7 @@ const sentimentLabel = (sentiment: SENTIMENT) => {
       return "";
   }
 };
+
 
 const HeaderCell = ({ label }: { label: string }) => (
   <div className="flex justify-center items-center gap-1 whitespace-nowrap">

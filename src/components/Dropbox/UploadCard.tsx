@@ -1,25 +1,28 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export enum UploadStatus {
-  Idle ,
-  Uploading ,
-  Failed ,
-  Complete,
-}
+export const UploadStatus = {
+  Idle: 0,
+  Uploading: 1,
+  Failed: 2,
+  Complete: 3,
+} as const;
+export type UploadStatus = typeof UploadStatus[keyof typeof UploadStatus];
 
-export enum UploadCardVariant {
-  Document = 'document',
-  Media = 'media',
-  Minimal = 'minimal',
-}
+export const UploadCardVariant = {
+  Document: "document",
+  Media: "media",
+  Minimal: "minimal",
+} as const;
+export type UploadCardVariant = typeof UploadCardVariant[keyof typeof UploadCardVariant];
 
-export enum UploadCardSize {
-  Sm = 'sm',
-  Md = 'md',
-  Lg = 'lg',
-  Xl = 'xl',
-}
+export const UploadCardSize = {
+  Sm: "sm",
+  Md: "md",
+  Lg: "lg",
+  Xl: "xl",
+} as const;
+export type UploadCardSize = typeof UploadCardSize[keyof typeof UploadCardSize];
 
 interface UploadCardProps {
   variant?: UploadCardVariant;
@@ -149,8 +152,7 @@ const UploadCard: React.FC<UploadCardProps> = ({
       {status === UploadStatus.Uploading && (
         <>
           <div className="w-[292px] flex flex-col gap-[14px] justify-center items-center">
-          <div className="h-[4px] bg-borderAccent" style={{ width: `${progress}%` }} />
-
+            <div className="h-[4px] bg-borderAccent" style={{ width: `${progress}%` }} />
             <span className="text-primaryB font-medium text-[16px]">{progress}% complete</span>
           </div>
           <button
@@ -195,4 +197,4 @@ const UploadCard: React.FC<UploadCardProps> = ({
   );
 };
 
-export default UploadCard;
+export default UploadCard;

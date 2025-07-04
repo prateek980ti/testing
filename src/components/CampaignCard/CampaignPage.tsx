@@ -4,7 +4,6 @@ import { IoAddSharp } from "react-icons/io5";
 import { CgSearch } from "react-icons/cg";
 import CampaignData from "./CampaignData";
 
-
 const CampaignPage = () => {
   return (
     <div className="bg-backgroundInverseSecondary h-screen p-2 overflow-y-scroll  text-white">
@@ -50,7 +49,6 @@ const CampaignPage = () => {
               <div className="bg-white h-18 w-18 text-black text-2xl flex justify-center items-center rounded-full">
                 <IoAddSharp />
               </div>
-
               <div>Add Campaign</div>
             </div>
           </div>
