@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
@@ -44,7 +44,7 @@ interface InputFieldProps {
   size?: InputSize;
   status?: InputStatus;
   counter?: { max: number };
-  onChange?: () => void;
+  onChange?: (e:React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
   className?: string;
   placeholder?: string;
@@ -93,7 +93,7 @@ export const InputField = ({
 
   const counterHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
-    onChange && onChange();
+    onChange && onChange(e);
   };
 
   useEffect(() => {

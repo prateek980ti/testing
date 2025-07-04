@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import PublicLayout from './components/PublicLayout';
 import Landing from './pages/Landing';
-import Login from './components/Login';
+import Login from './components/LoginForm/Login';
 import Register from './components/Register';
 import UploadCard from './components/Dropbox/UploadCard';
 import MainPage from './pages/MainPage';
