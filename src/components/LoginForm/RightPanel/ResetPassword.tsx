@@ -7,9 +7,10 @@ import { useResetPassword } from '../../../hooks/useResetPassword';
 
 type Props = {
   onNext: () => void;
+  onBackToLogin: () => void;
 };
 
-const ResetPassword: React.FC<Props> = ({ onNext }) => {
+const ResetPassword: React.FC<Props> = ({ onNext,onBackToLogin }) => {
   const [email, setEmail] = useState('');
   const { sendResetEmail, loading, error } = useResetPassword();
 
@@ -58,9 +59,13 @@ const ResetPassword: React.FC<Props> = ({ onNext }) => {
           </Button>
         </form>
 
-        <div className="text-center underline">
-          <a href="#">Return to Log in</a>
-        </div>
+        <div
+  className="text-center text-blue-500 underline cursor-pointer"
+  onClick={onBackToLogin}
+>
+  Return to Log in
+</div>
+
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import ResetPassword from "./RightPanel/ResetPassword";
 import Heading from "./LeftPanel/Heading";
 import CreatePassword from "./RightPanel/CreatePassword";
 import Done from "./RightPanel/Done";
-const Login= () => {
+const Login = () => {
   const [step, setStep] = useState<"login" | "forgot" | "update" | "done">(
     "login"
   );
@@ -44,31 +44,30 @@ const Login= () => {
       />
 
       <div className="z-10 flex items-center justify-center p-6 lg:w-1/2 lg:p-10">
-        <Heading/>
+        <Heading />
       </div>
 
       <div className="z-10 flex items-center justify-center w-full p-6 lg:w-1/2 lg:p-10">
         {step === "login" && (
-             <div>
-
-             <LoginForm
+          <div>
+            <LoginForm
               key={location.pathname}
-               onForgot={() => setStep("forgot")}
-               onLoginSuccess={() => console.log('Logged in!')}
-             />
-           </div>
-
+              onForgot={() => setStep("forgot")}
+              onLoginSuccess={() => console.log("Logged in!")}
+            />
+          </div>
         )}
         {step === "forgot" && (
-          <ResetPassword onNext={() => setStep("update")} />
+          <ResetPassword
+            onNext={() => setStep("update")}
+            onBackToLogin={() => setStep("login")}
+          />
         )}
-         {step === "update" && (
+        {step === "update" && (
           <CreatePassword onCreate={() => setStep("done")} />
         )}
 
         {step === "done" && <Done onLoginAgain={() => setStep("login")} />}
-
-
       </div>
     </div>
   );
