@@ -1,4 +1,3 @@
-import React from 'react'
 import VoiceCarousel from './VoiceCarousel'
 import Voices from './Voices'
 
