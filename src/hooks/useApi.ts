@@ -4,7 +4,7 @@ import axios from "axios";
 import type { AxiosResponse, AxiosRequestConfig } from "axios";
 
 // Set your API base URL
-const BASE_URL = "http://18.171.246.223:3004";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 // Create a pre-configured Axios instance
 const axiosInstance = axios.create({
