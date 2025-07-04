@@ -3,7 +3,7 @@ import { IconButton } from "./utils/IconButton";
 
 const Footer = () => {
   return (
-    <>
+    <> 
       <div className="h-px w-full bg-gradient-to-r from-transparent via-[#4B4B4B] to-transparent relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/20 to-indigo-500/10 animate-pulse"></div>
       </div>
