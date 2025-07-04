@@ -3,32 +3,35 @@ import { twMerge } from 'tailwind-merge';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
-export enum IconStatus {
-  COMPLETE,
-  INCOMPLETE,
-  LOADING,
-  CLOSE,
-}
+export const IconStatus = {
+  COMPLETE: 0,
+  INCOMPLETE: 1,
+  LOADING: 2,
+  CLOSE: 3,
+} as const;
+export type IconStatus = typeof IconStatus[keyof typeof IconStatus];
 
-export enum InputSize {
-  SM,
-  MD,
-  LG,
-}
+export const InputSize = {
+  SM: "SM",
+  MD: "MD",
+  LG: "LG",
+} as const;
+export type InputSize = typeof InputSize[keyof typeof InputSize];
 
-export enum InputStatus {
-  DEFAULT,
-  SUCCESS,
-  ERROR,
-}
+export const InputStatus = {
+  DEFAULT: "DEFAULT",
+  SUCCESS: "SUCCESS",
+  ERROR: "ERROR",
+} as const;
+export type InputStatus = typeof InputStatus[keyof typeof InputStatus];
 
-
-export enum InputType {
-  NUMBER,
-  EMAIL,
-  PASSWORD,
-  TEXT
-}
+export const InputType = {
+  NUMBER: "NUMBER",
+  EMAIL: "EMAIL",
+  PASSWORD: "PASSWORD",
+  TEXT: "TEXT",
+} as const;
+export type InputType = typeof InputType[keyof typeof InputType];
 
 const inputTypeMap = {
   [InputType.NUMBER]: 'number',
@@ -102,6 +105,7 @@ export const InputField = ({
       setValue(value.slice(0, counter.max));
       alert('Limit exceed');
     }
+    // eslint-disable-next-line
   }, [value]);
 
   const isPassword = type === InputType.PASSWORD;
@@ -155,14 +159,10 @@ export const InputField = ({
         {/* Password toggle icon */}
         {isPassword && (
           <div onClick={() => setShowPassword(!showPassword)} className="cursor-pointer ml-2">
-            
-              {
-                showPassword
-                  ? <FaEye />
-                  :value.length ?<FaEyeSlash/>:<></>
-              }
-             
-            
+            {showPassword
+              ? <FaEye />
+              : value.length ? <FaEyeSlash /> : <></>
+            }
           </div>
         )}
 
@@ -178,9 +178,8 @@ export const InputField = ({
           >
             {(!cross &&
               status === InputStatus.DEFAULT &&
-              ![IconStatus.COMPLETE, IconStatus.INCOMPLETE, IconStatus.LOADING].includes(
-                iconStatus!
-              )) ||
+              !([IconStatus.COMPLETE, IconStatus.INCOMPLETE, IconStatus.LOADING] as IconStatus[]).includes(iconStatus!)
+) ||
             (status === InputStatus.ERROR && !cross) ? (
               <img src="src/assets/Icons/InputIcons/close.svg" alt="" />
             ) : iconStatus === IconStatus.COMPLETE ? (

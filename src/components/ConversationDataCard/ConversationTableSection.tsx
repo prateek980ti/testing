@@ -1,10 +1,9 @@
-import Table, { SENTIMENT } from "./Table";
+import Table from "./Table";
 import Topbar from "./Topbar";
 import Pagination from "../Pagination";
 import { useState } from "react";
 import Filterbar from "./Filterbar";
 import data from "./Conversationdata";
-
 
 function ConversationTableSection() {
   const [currentPage, setCurrentPage] = useState(2);
@@ -24,7 +23,7 @@ function ConversationTableSection() {
         <Pagination
           totalPages={10}
           currentPage={currentPage}
-          onPageChange={(page) => setCurrentPage(page)}
+          onPageChange={(page: number) => setCurrentPage(page)}
         />
       </div>
     </div>

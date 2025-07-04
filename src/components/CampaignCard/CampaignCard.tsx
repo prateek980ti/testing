@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-export enum CardTag {
-  AI = "Ai",
-  BETA_TEST = "Beta Test",
-  CONTENT_CREATION = "Content Creation",
-  DESIGN = "Design",
-  DEVELOPMENT = "Development",
-}
+export const CardTag = {
+  AI: "Ai",
+  BETA_TEST: "Beta Test",
+  CONTENT_CREATION: "Content Creation",
+  DESIGN: "Design",
+  DEVELOPMENT: "Development",
+} as const;
+
+export type CardTag = typeof CardTag[keyof typeof CardTag];
 
 export interface CardProps {
   title: string;
@@ -65,7 +67,6 @@ const CampaignCard: React.FC<CardProps> = ({
           </div>
         </div>
 
-
         <p className="mt-3 mb-2 text-[12px]">
           {description}
           <span className="font-medium cursor-pointer text-accent hover:underline">
@@ -73,10 +74,8 @@ const CampaignCard: React.FC<CardProps> = ({
           </span>
         </p>
 
-
         <div className="absolute bottom-4 left-4 right-4">
           <div className="relative w-[330px] h-[18px] bg-gray-300 rounded-b-md ">
-
             <div
               className="absolute top-[-10px]  h-[28px] rounded-md bg-gradient-to-r from-[#8E1BA4] to-[#B6084B]"
               style={{
@@ -84,7 +83,6 @@ const CampaignCard: React.FC<CardProps> = ({
                 transition: "width 0.2s ease-in",
               }}
             ></div>
-
 
             <div
               className="absolute flex flex-col items-center  transition-all duration-300"
@@ -94,11 +92,10 @@ const CampaignCard: React.FC<CardProps> = ({
               }}
             >
               <span className="text-sm font-semibold text-white mt-1">
-
                 {animatedProgress}%
               </span>
               <img src="images/Call.svg" alt="call" className="w-6 h-6" />
-              <img src="images/Group.svg" alt="group" className="w-4 h-4"/>
+              <img src="images/Group.svg" alt="group" className="w-4 h-4" />
             </div>
           </div>
         </div>

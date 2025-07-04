@@ -1,10 +1,12 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-export enum Status {
-  ONLINE = "online",
-  OFFLINE = "offline",
-}
+export const Status = {
+  ONLINE: 0,
+  OFFLINE: 1,
+} as const;
+export type Status = typeof Status[keyof typeof Status];
+
 
 interface ProfileCardProps {
   username?: string;
