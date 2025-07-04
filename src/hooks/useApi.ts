@@ -1,5 +1,3 @@
-// src/api/api.ts
-
 import axios from "axios";
 import type { AxiosResponse, AxiosRequestConfig } from "axios";
 
