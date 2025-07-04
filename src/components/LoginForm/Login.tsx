@@ -7,7 +7,7 @@ import CreatePassword from "./RightPanel/CreatePassword";
 import Done from "./RightPanel/Done";
 const Login = () => {
   const [step, setStep] = useState<"login" | "forgot" | "update" | "done">(
-    "done"
+    "login"
   );
 
   return (
