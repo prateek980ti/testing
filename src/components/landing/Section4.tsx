@@ -97,7 +97,7 @@ const Section4 = () => {
         Our AI Assistant and Support Engineers are available 24/7.
       </p>
       <div className='flex justify-center items-center pt-3 gap-4 max-sm:flex-col'>
-        <OutlinedButton className='p-[2px]'><img src="/src/assets/Icons/chat.svg" alt="" /> Start Chat</OutlinedButton>
+        <OutlinedButton className='p-[2px]'><img src="/assets/Icons/chat.svg" alt="" /> Start Chat</OutlinedButton>
         <OutlinedButton className='p-[2px]'>Request a Callback</OutlinedButton>
       </div>
     </section>

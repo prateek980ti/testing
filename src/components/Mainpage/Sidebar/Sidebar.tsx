@@ -8,17 +8,15 @@ function Sidebar() {
 
   return (
     <div
-      className={`bg-backgroundInverseSecondary text-white transition-all duration-300 flex flex-col justify-between ${
-        collapsed ? "w-20 items-center" : "w-64"
-      } h-screen`}
+      className={`bg-backgroundInverseSecondary text-white transition-all duration-300 flex flex-col justify-between ${collapsed ? "w-20 items-center" : "w-64"
+        } h-screen`}
     >
       {/* Top section */}
       <div className="flex flex-col justify-center gap-4 p-4 w-full">
         {/* Logo + Toggle */}
         <div
-          className={`flex items-center ${
-            !collapsed ? "justify-between" : "justify-center"
-          } w-full`}
+          className={`flex items-center ${!collapsed ? "justify-between" : "justify-center"
+            } w-full`}
         >
           {!collapsed && (
             <div className="flex items-center gap-3">
@@ -35,12 +33,12 @@ function Sidebar() {
             {!collapsed && (
               <div className="hover:bg-[#444] h-10 w-10 rounded-sm flex items-center justify-center">
 
-              <img
-                src="src/assets/Icons/Sidebar/menu.svg"
-                alt="menu"
-                className="w-6 h-6"
+                <img
+                  src="/assets/Icons/Sidebar/menu.svg"
+                  alt="menu"
+                  className="w-6 h-6"
                 />
-                </div>
+              </div>
             )}
 
             {/* Shown when collapsed but NOT hovered */}
@@ -55,7 +53,7 @@ function Sidebar() {
             {/* Shown when collapsed AND hovered */}
             {collapsed && (
               <img
-                src="src/assets/Icons/Sidebar/menu.svg"
+                src="/assets/Icons/Sidebar/menu.svg"
                 alt="menu"
                 className="w-6 h-6 absolute transition-opacity duration-200 opacity-0 group-hover:opacity-100"
               />
@@ -65,12 +63,11 @@ function Sidebar() {
 
         {/* Search */}
         <div
-          className={`bg-[#333333] flex items-center gap-2 px-3 mt-1 py-1.5 rounded-md ${
-            collapsed ? "justify-center" : ""
-          }`}
+          className={`bg-[#333333] flex items-center gap-2 px-3 mt-1 py-1.5 rounded-md ${collapsed ? "justify-center" : ""
+            }`}
         >
           <img
-            src="src/assets/Icons/Sidebar/search.svg"
+            src="/assets/Icons/Sidebar/search.svg"
             alt="search"
             className="w-5 h-5"
           />
@@ -87,31 +84,31 @@ function Sidebar() {
         <div className="flex flex-col gap-1 w-full">
           <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
             <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-              <img src="src/assets/Icons/Sidebar/home.svg" alt="" />
+              <img src="/assets/Icons/Sidebar/home.svg" alt="" />
               {!collapsed && <p className="text-gray-300 text-sm">Home</p>}
             </div>
           </button>
           <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
             <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-              <img src="src/assets/Icons/Sidebar/dashboard.svg" alt="" />
+              <img src="/assets/Icons/Sidebar/dashboard.svg" alt="" />
               {!collapsed && <p className="text-gray-300 text-sm">Dashboard</p>}
             </div>
           </button>
           <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
             <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-              <img src="src/assets/Icons/Sidebar/campaign.svg" alt="" />
+              <img src="/assets/Icons/Sidebar/campaign.svg" alt="" />
               {!collapsed && <p className="text-gray-300 text-sm">Campaign</p>}
             </div>
           </button>
           <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
             <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-              <img src="src/assets/Icons/Sidebar/task.svg" alt="" />
+              <img src="/assets/Icons/Sidebar/task.svg" alt="" />
               {!collapsed && <p className="text-gray-300 text-sm">Task</p>}
             </div>
           </button>
           <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
             <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-              <img src="src/assets/Icons/Sidebar/reporting.svg" alt="" />
+              <img src="/assets/Icons/Sidebar/reporting.svg" alt="" />
               {!collapsed && <p className="text-gray-300 text-sm">Reporting</p>}
             </div>
           </button>

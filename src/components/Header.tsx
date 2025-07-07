@@ -8,7 +8,7 @@ export function Header() {
   return (
     <div className="flex justify-between w-[100%]">
       <div className="flex gap-3.5">
-        <img src="src/assets/Icons/Voicera.svg" alt="" />
+        <img src="/assets/Icons/Voicera.svg" alt="" />
         <p className="text-md font-bold">Voicera</p>
       </div>
     <div className="flex gap-6">

@@ -1,7 +1,6 @@
 import React from "react";
 import SectionContainer from "./SectionContainer";
 import { leftFeatures, rightFeatures } from "./Data";
-import earthVideo from "../../../assets/logoimage/earth gif.mp4";
 
 const Section2: React.FC = () => {
   return (
@@ -32,7 +31,7 @@ const Section2: React.FC = () => {
             muted
             className="rounded-full  md:w-[300px] lg:w-[350px] xl:w-[500px]"
           >
-            <source src={earthVideo} type="video/mp4" />
+            <source src="/assets/logoimage/earth gif.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

@@ -19,7 +19,7 @@ interface ProfileCardProps {
 const ProfileCard: React.FC<ProfileCardProps> = ({
   username = "Brooklyn Simmons",
   email = "brooklyn@simmons.com",
-  avatar = "src/assets/Icons/Sidebar/usericon.svg",
+  avatar = "/assets/Icons/Sidebar/usericon.svg",
   status = Status.OFFLINE,
   collapsed,
 }) => {
@@ -61,7 +61,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           <div className="hover:bg-[#444] p-1 rounded-full">
 
           <img
-            src="src/assets/Icons/Sidebar/verticalDots.svg"
+            src="/assets/Icons/Sidebar/verticalDots.svg"
             alt="Menu"
             className="w-4 h-4 cursor-pointer"
             />

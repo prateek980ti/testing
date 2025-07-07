@@ -31,7 +31,7 @@ const images = [
           >
             <div className="flex justify-between items-center px-4 py-2">
               <div className="flex gap-3.5 justify-center items-center pl-2">
-                <img src="src/assets/Icons/Voicera.svg" alt="" />
+                <img src="/assets/Icons/Voicera.svg" alt="" />
                 <p className="text-md font-bold">Voicera</p>
               </div>
               <OutlinedButton
@@ -157,7 +157,7 @@ const images = [
           <OutlinedButton className="mt-4 flex items-center gap-2">
             Start Today
             <img
-              src="/src/assets/Icons/click.svg"
+              src="/assets/Icons/click.svg"
               alt="Click icon"
               className="w-5 h-5"
             />
