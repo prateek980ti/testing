@@ -139,7 +139,7 @@
                             <span className="ripple border-cyan-300 w-[70%] h-[70%] delay-400" />
                             <div className="z-10 w-16 h-16 bg-gradient-to-tr from-primaryC to-accent rounded-full flex items-center justify-center p-2">
                               <img
-                                src="src/assets/Icons/mic.svg"
+                                src="/assets/Icons/mic.svg"
                                 alt="Mic Icon"
                                 className="w-8 h-8"
                               />

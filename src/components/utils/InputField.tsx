@@ -51,7 +51,7 @@ interface InputFieldProps {
   disabled?: boolean;
   className?: string;
   placeholder?: string;
-  type?: InputType; 
+  type?: InputType;
 }
 
 export const InputField = ({
@@ -141,7 +141,7 @@ export const InputField = ({
             ? 'bg-contentSecondary'
             : '',
           disabled &&
-            'bg-contentSecondary cursor-not-allowed border-borderInverseTransparent text-white/50',
+          'bg-contentSecondary cursor-not-allowed border-borderInverseTransparent text-white/50',
           className,
         )}
       >
@@ -179,13 +179,13 @@ export const InputField = ({
             {(!cross &&
               status === InputStatus.DEFAULT &&
               !([IconStatus.COMPLETE, IconStatus.INCOMPLETE, IconStatus.LOADING] as IconStatus[]).includes(iconStatus!)
-) ||
-            (status === InputStatus.ERROR && !cross) ? (
-              <img src="src/assets/Icons/InputIcons/close.svg" alt="" />
+            ) ||
+              (status === InputStatus.ERROR && !cross) ? (
+              <img src="/assets/Icons/InputIcons/close.svg" alt="" />
             ) : iconStatus === IconStatus.COMPLETE ? (
-              <img src="src/assets/Icons/InputIcons/success.svg" alt="" />
+              <img src="/assets/Icons/InputIcons/success.svg" alt="" />
             ) : iconStatus === IconStatus.INCOMPLETE ? (
-              <img src="src/assets/Icons/InputIcons/error.svg" alt="" />
+              <img src="/assets/Icons/InputIcons/error.svg" alt="" />
             ) : iconStatus === IconStatus.LOADING ? (
               <div className="flex items-center justify-center">
                 <div className="relative w-5 h-5">
@@ -200,11 +200,11 @@ export const InputField = ({
       <div className="flex items-center gap-2">
         {status === InputStatus.SUCCESS ? (
           <span>
-            <img src="src/assets/Icons/InputIcons/success.svg" alt="" />
+            <img src="/assets/Icons/InputIcons/success.svg" alt="" />
           </span>
         ) : status === InputStatus.ERROR ? (
           <span>
-            <img src="src/assets/Icons/InputIcons/error.svg" alt="" />
+            <img src="/assets/Icons/InputIcons/error.svg" alt="" />
           </span>
         ) : (
           <span></span>

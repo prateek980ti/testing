@@ -19,7 +19,7 @@ function SidebarBottomIcons({
             {/* Icon + Label */}
             <div className="flex items-center gap-2">
               <img
-                src="src/assets/Icons/Sidebar/bell.svg"
+                src="/assets/Icons/Sidebar/bell.svg"
                 alt="Notifications"
                 className="w-5 h-5"
               />
@@ -42,7 +42,7 @@ function SidebarBottomIcons({
         {/* Support */}
         <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
           <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-            <img src="src/assets/Icons/Sidebar/support.svg" alt="" />
+            <img src="/assets/Icons/Sidebar/support.svg" alt="" />
             {!collapsed && <p className="text-gray-300 text-sm">Support</p>}
           </div>
         </button>
@@ -50,7 +50,7 @@ function SidebarBottomIcons({
         {/* Settings */}
         <button className="flex cursor-pointer justify-center items-center p-[2px] h-9 active:bg-gradient-to-tl from-accent to-primaryC rounded-[3rem] hover:bg-[#444]">
           <div className="flex items-center gap-3 rounded-[2.8rem] w-full h-full active:bg-black px-3">
-            <img src="src/assets/Icons/Sidebar/setting.svg" alt="" />
+            <img src="/assets/Icons/Sidebar/setting.svg" alt="" />
             {!collapsed && <p className="text-gray-300 text-sm">Settings</p>}
           </div>
         </button>
